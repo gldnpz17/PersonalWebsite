@@ -40,4 +40,25 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    document.body.classList.add('js-loading');
+
+    document.body.hidden = true;
+
+    window.addEventListener("load", showPage);
+
+    function showPage() {
+      document.body.classList.remove('js-loading');
+      document.body.hidden = false;
+    }
+
+    var img = document.querySelector("img");
+    document.body.classList.add('js-loading');
+    img.addEventListener("load", removeLoadingClass);
+    function removeLoadingClass() {
+      document.body.classList.remove('js-loading');
+    }
+
+
+  </script>
 </html>
