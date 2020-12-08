@@ -21,7 +21,7 @@ namespace PersonalWebsite
 
             services.AddSpaStaticFiles(config =>
             {
-                config.RootPath = "ClientApp/personal-website/build";
+                config.RootPath = "ClientApp/build";
             });
         }
 
@@ -45,7 +45,7 @@ namespace PersonalWebsite
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp/personal-website";
+                spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
                 {
