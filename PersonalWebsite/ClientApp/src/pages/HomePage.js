@@ -198,7 +198,7 @@ export default class HomePage extends React.Component {
     return (
       <StyledContainer fluid className="m-0 p-0 pt-5 pb-5">
         <StyledJumbotron fluid className="mb-5 pl-lg-5 pl-sm-3">
-          <Row className="w-100 m-0">
+          <Row className="w-100 m-0 flex-nowrap">
             <Col className="col-10">
               <StyledSelfIdentityRow className="d-flex flex-nowrap">
                 <span className="p-2">

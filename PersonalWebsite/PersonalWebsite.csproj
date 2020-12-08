@@ -17,8 +17,12 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\personal-website\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\personal-website\**" />
+    <EmbeddedResource Remove="ClientApp\personal-website\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\personal-website\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -47,9 +51,5 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\personal-website\src\components\" />
-  </ItemGroup>
 
 </Project>

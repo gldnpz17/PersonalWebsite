@@ -1,31 +1,33 @@
 import React from "react";
 import { Button, Collapse, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
+import ThemedButton from "./ThemedComponents/ThemedButton";
 
 const StyledButton = styled(Button)`
-  background-color: #0277bd;
-  border-color: #004c8c;
+  background-color: ${props => props.theme.secondary};
+  border-color: ${props => props.theme.secondaryDark};
 
   &:hover {
-    background-color: #004c8c;
-    border-color: #004c8c;
+    background-color: ${props => props.theme.secondaryDark};
+    border-color: ${props => props.theme.secondaryDark};
   }
 
   &:active {
-    background-color: #004c8c !important;
-    border-color: #58a5f0 !important;
+    background-color: ${props => props.theme.secondaryDark} !important;
+    border-color: ${props => props.theme.secondaryLight} !important;
     border-width: 2px !important;
+    box-shadow: 0px 0px 0px;
   }
 
   &:focus {
-    background-color: #004c8c !important;
-    border-color: #58a5f0 !important;
+    background-color: ${props => props.theme.secondaryDark} !important;
+    border-color: ${props => props.theme.secondaryLight} !important;
     box-shadow: 0px 0px 0px;
   }
   
   &:active:focus {
-    background-color: #004c8c !important;
-    border-color: #58a5f0 !important;
+    background-color: ${props => props.theme.secondaryDark} !important;
+    border-color: ${props => props.theme.secondaryLight} !important;
     box-shadow: 0px 0px 0px;
   }
 `;
@@ -53,17 +55,17 @@ export default class NavigationBar extends React.Component{
   render() {
     return (
       <StyledNavBar className="fixed-top w-100">
-        <StyledNavbarBrand href="#">gldnpz</StyledNavbarBrand>
+        <StyledNavbarBrand href="/index">gldnpz</StyledNavbarBrand>
 
         <Navbar.Collapse>
           <Nav>
             <StyledNavLink href="#">Blog</StyledNavLink>
-            <StyledNavLink href="#">Projects</StyledNavLink>
+            <StyledNavLink href="/projects">Projects</StyledNavLink>
             <StyledNavLink href="#">About</StyledNavLink>
           </Nav>
         </Navbar.Collapse>
 
-        <StyledButton>Admin Login</StyledButton>
+        <ThemedButton>Admin Login</ThemedButton>
       </StyledNavBar>
     );
   }
