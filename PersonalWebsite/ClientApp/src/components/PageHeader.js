@@ -13,12 +13,12 @@ const StyledHeaderContentRow = styled(Row)`
   
   @keyframes header-content-entrance-anim {
     from {
-      margin-top: 5%;
+      transform: translateY(10%);
       opacity: 0;
     }
 
     to {
-      margin-top: 0%;
+      transform: translateY(0%);
       opacity: 1;
     }
   }
@@ -31,11 +31,11 @@ const StyledPeekingKurumi = styled.img`
 
   @keyframes kurumi-entrance-anim {
     from {
-      margin-left: 100%;
+      transform: translateX(100%)
     }
 
     to {
-      margin-left: 0%;
+      transform: translateX(0%);
     }
   }
 `;

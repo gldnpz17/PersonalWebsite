@@ -61,11 +61,11 @@ export default class NavigationBar extends React.Component{
           <Nav>
             <StyledNavLink href="/blog">Blog</StyledNavLink>
             <StyledNavLink href="/projects">Projects</StyledNavLink>
-            <StyledNavLink href="#">About</StyledNavLink>
+            <StyledNavLink href="/about">About</StyledNavLink>
           </Nav>
         </Navbar.Collapse>
 
-        <ThemedButton>Admin Login</ThemedButton>
+        <ThemedButton>Login</ThemedButton>
       </StyledNavBar>
     );
   }

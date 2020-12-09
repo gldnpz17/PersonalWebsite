@@ -1,9 +1,12 @@
 ﻿import React from "react";
 import "./HomePage.scss";
 import EducationCard from "../components/EducationCard";
-import {Button, Card, CardColumns, Col, Container, Jumbotron, Nav, NavItem, Row, Tab} from "react-bootstrap";
+import {Button, Card, CardColumns, CardDeck, Col, Container, Jumbotron, Nav, NavItem, Row, Tab} from "react-bootstrap";
 import SkillTabContent from "../components/SkillTabContent";
 import styled from "styled-components";
+import ThemedCard from "../components/ThemedComponents/ThemedCard";
+import ThemedButton from "../components/ThemedComponents/ThemedButton";
+import ThemedSvg from "../components/ThemedComponents/ThemedSvg";
 
 const StyledNavItem = styled(Nav.Item)`
   & > .nav-link {
@@ -22,17 +25,17 @@ const StyledNavItem = styled(Nav.Item)`
 `;
 
 const StyledPeekingKurumi = styled.img`
-  max-height: 15rem;
+  height: 15rem;
   animation-duration: 1s;
   animation-name: kurumi-entrance-anim;
 
   @keyframes kurumi-entrance-anim {
     from {
-      margin-left: 100%;
+      transform: translateX(100%)
     }
 
     to {
-      margin-left: 0%;
+      transform: translateX(0%);
     }
   }
 `;
@@ -67,221 +70,90 @@ const StyledSelfIdentityRow = styled(Row)`
   
   @keyframes identity-entrance-anim {
     from {
-      margin-top: 5%;
+      transform: translateY(10%);
       opacity: 0;
     }
 
     to {
-      margin-top: 0%;
+      transform: translateY(0%);
       opacity: 1;
     }
   }
 `;
 
-export default class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      educations: [
-        {
-          institutionName: "Universitas Gadjah Mada", 
-          departmentName: "Information Technology", 
-          startYear: "2019", 
-          endYear: "Present", 
-          description: "Participated in some IT-related competitions(hackathons, competitive programming and data science competitions). Current GPA is 2.96."
-        },
-        {
-          institutionName: "SMAN 8 Yogyakarta", 
-          departmentName: "Natural Sciences", 
-          startYear: "2016", 
-          endYear: "2019", 
-          description: "Joined the school’s competitive programming club and participated in the city-level national science olympiad (informatics branch)."
-        },
-        {
-          institutionName: "SMPN 5 Yogyakarta", 
-          departmentName: "Acceleration Program", 
-          startYear: "2014", 
-          endYear: "2016", 
-          description: "No description."},
-        {
-          institutionName: "SDN Keputran A Yogyakarta", 
-          departmentName: null, 
-          startYear: "2014", endYear: "2011", 
-          description: "No description."
-        },
-        {
-          institutionName: "SD Muhammadiyah Sapen Yogyakarta",
-          departmentName: "CI MIPA Program", 
-          startYear: "2010", endYear: "2011", 
-          description: "No description."
-        },
-        {
-          institutionName: "SD Muhammadiyah Sapen Nitikan",
-          departmentName: null, 
-          startYear: "2008", endYear: "2010", 
-          description: "No description."
-        }
-      ],
-      skills: [
-        {
-          type: "programmingLanguage",
-          name: "C#",
-          percentage: 25,
-          description: "Started learning this language back in high school, currently my primary programming language"
-        },
-        {
-          type: "programmingLanguage",
-          name: "Visual Basic",
-          percentage: 10,
-          description: "the language i used back when i first started learning programming around 9 years ago. i didn't learn much about modern programming using this language though."
-        },
-        {
-          type: "programmingLanguage",
-          name: "C",
-          percentage: 1,
-          description: "not much experience with this language. i've only made simple console programs with this. this might as well be just filler content."
-        },        
-        {
-          type: "programmingLanguage",
-          name: "Assembly",
-          percentage: 1,
-          description: "i'm actually glad i don't have any experience with this language. the thought of assembly programming sends shivers down my spine."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        },
-        {
-          type: "programmingLanguage",
-          name: "Javascript",
-          percentage: 3,
-          description: "currently learning frontend web dev so naturally i would learn javascript."
-        }
-      ]
-    };
-  }
-
-  render() {
-    return (
-      <StyledContainer fluid className="m-0 p-0 pt-5 pb-5">
-        <StyledJumbotron fluid className="mb-5 pl-lg-5 pl-sm-3">
-          <Row className="w-100 m-0 flex-nowrap">
-            <Col className="col-10">
-              <StyledSelfIdentityRow className="d-flex flex-nowrap">
-                <Col className="p-2 col-auto">
-                  <StyledProfilePicture className="img-fluid" src="./logo.png"/>
-                </Col>
-                <Col className="col-lg-6 p-0">
-                  <h1 className="mb-0">Firdaus Bisma Suryakusuma</h1>
-                  <h5>a failure of a human</h5>
-                  <p className="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis. Nulla vel enim lacinia, elementum ante nec, porta velit. Elementum ante nec, porta velit. Nulla vel enim lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis.</p>
-                </Col>
-              </StyledSelfIdentityRow>
-            </Col>
-            <Col className="col-auto d-flex p-0 ml-auto">
-              <StyledPeekingKurumi src="./PeekingKurumi.png" />
-            </Col>
-          </Row>
-        </StyledJumbotron>
-        <Row className="justify-content-center w-100 m-0">
+export default function HomePage(props) {
+  return (
+    <StyledContainer fluid className="m-0 p-0 pt-5 pb-5">
+      <StyledJumbotron fluid className="mb-5 pl-lg-5 pl-sm-3">
+        <Row className="w-100 m-0 flex-nowrap">
           <Col className="col-10">
-            {/*Education*/}
-            <h3 className="text-center">Education</h3>
-            <Row className="justify-content-center mb-5">
-              <CardColumns id="education-list">
-                {
-                  this.state.educations.map((edu) => {
-                    return (
-                      <Row className="justify-content-center">                    
-                        <Col className="col-lg-7 col-md-9 col-sm-11" key={edu.institutionName}>
-                          <EducationCard
-                          institutionName={edu.institutionName}
-                          departmentName={edu.departmentName}
-                          startYear={edu.startYear}
-                          endYear={edu.endYear}
-                          description={edu.description} />
-                        </Col>
-                      </Row>
-                    );
-                  })
-                }
-              </CardColumns>
-            </Row>
-
-            {/*Skills*/}
-            <h3 className="text-center">Skills</h3>
-            <Row className="justify-content-center">
-              <StyledSkillsTabCard id="skills-tab-card" className="w-100">
-                <Card.Body>
-                  <Tab.Container defaultActiveKey="programmingLanguages">
-                    <Row>
-                      <Col className="col-12 col-lg-2">
-                        <Nav className="flex-column" variant="pills" fill justify>
-                          <StyledNavItem className="h-100">
-                            <Nav.Link className="m-1" eventKey="programmingLanguages">Programming Languages</Nav.Link>
-                          </StyledNavItem>
-                          <StyledNavItem className="h-100">
-                            <Nav.Link className="m-1" eventKey="technologies">Technologies</Nav.Link>
-                          </StyledNavItem>
-                          <StyledNavItem className="h-100">
-                            <Nav.Link className="m-1" eventKey="nonTechnical">Non Technical</Nav.Link>
-                          </StyledNavItem>
-                        </Nav>
-                      </Col>
-                      <Col className="col-12 col-lg-10">
-                        <Tab.Content>
-                          <Tab.Pane eventKey="programmingLanguages">
-                            <SkillTabContent skills={this.state.skills.filter(i => i.type === "programmingLanguage")} />
-                          </Tab.Pane>
-                          <Tab.Pane eventKey="technologies">
-                            <SkillTabContent skills={this.state.skills.filter(i => i.type === "technology")} />
-                          </Tab.Pane>
-                          <Tab.Pane eventKey="nonTechnical">
-                            <SkillTabContent skills={this.state.skills.filter(i => i.type === "nonTechnical")} />
-                          </Tab.Pane>
-                        </Tab.Content>
-                      </Col>
-                    </Row>
-                  </Tab.Container>
-                </Card.Body>
-              </StyledSkillsTabCard>
-            </Row>
+            <StyledSelfIdentityRow className="d-flex flex-nowrap">
+              <Col className="p-2 col-auto">
+                <StyledProfilePicture className="img-fluid" src="./logo.png"/>
+              </Col>
+              <Col className="col-lg-6 p-0">
+                <h1 className="mb-0">Firdaus Bisma Suryakusuma</h1>
+                <h5>amateur software developer, undergraduate IT student</h5>
+                <p className="text-justify">first of all, thanks for paying a visit 👋. also, i apologize for the (currently) awful website. i've only started learning web development around a month ago. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget mattis magna, ut rutrum libero. Praesent pellentesque tincidunt posuere. </p>
+              </Col>
+            </StyledSelfIdentityRow>
+          </Col>
+          <Col className="col-auto p-0 ml-auto">
+            <StyledPeekingKurumi className="" src="./PeekingKurumi.png" />
           </Col>
         </Row>
-      </StyledContainer>
-      );
-  }
+      </StyledJumbotron>
+      <Row className="ml-5 mr-5">
+        <Col>
+          <h2 className="text-center">Site Contents</h2>
+          <Row className="mb-5">
+            <CardDeck>
+              <ThemedCard className="ml-2 mr-2 mb-4">
+                <Card.Body>
+                  <div className="d-flex mb-1">
+                    <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
+                      <path d="M16,15H9V13H16M19,11H9V9H19M19,7H9V5H19M21,1H7C5.89,1 5,1.89 5,3V17C5,18.11 5.9,19 7,19H21C22.11,19 23,18.11 23,17V3C23,1.89 22.1,1 21,1M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3Z" />
+                    </ThemedSvg>
+                    <h4 className="m-0 flex-grow-1">Blog</h4>
+                    <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                  </div>
+                  <h6>random thoughts</h6>
+                  <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future, who knows 🤷‍♂️. might even post memes here.</p>
+                </Card.Body>
+              </ThemedCard>
+              <ThemedCard className="ml-2 mr-2 mb-4">
+                <Card.Body>
+                  <div className="d-flex mb-1">
+                    <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
+                      <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                    </ThemedSvg>
+                    <h4 className="m-0 flex-grow-1">Projects</h4>
+                    <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                  </div>
+                  <h6>projects i've worked on</h6>
+                  <p></p>
+                </Card.Body>
+              </ThemedCard>
+              <ThemedCard className="ml-2 mr-2 mb-4">
+                <Card.Body>
+                  <div className="d-flex mb-1">
+                    <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
+                      <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                    </ThemedSvg>
+                    <h4 className="m-0 flex-grow-1">About</h4>
+                    <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                  </div>
+                  <h6>know me better, i guess?</h6>
+                  <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense.</p>
+                </Card.Body>
+              </ThemedCard>
+            </CardDeck> 
+          </Row>
+
+          <h2 className="text-center">Changelogs</h2>
+          <h1 className="text-center" style={{color: "gray"}}>this feature is a work in progress</h1>
+        </Col>
+      </Row>
+    </StyledContainer>
+  );
 }

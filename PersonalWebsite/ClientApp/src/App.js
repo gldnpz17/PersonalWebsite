@@ -8,6 +8,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import { ThemeProvider } from 'styled-components';
 import BlogPage from './pages/BlogPage';
 import { Container } from 'react-bootstrap';
+import AboutPage from './pages/AboutPage';
 
 const theme = {
   primary: "#455a64",
@@ -38,6 +39,10 @@ function App() {
 
             <Route path="/blog">
               <BlogPage />
+            </Route>
+
+            <Route path="/about">
+              <AboutPage />
             </Route>
 
             {/*404*/}

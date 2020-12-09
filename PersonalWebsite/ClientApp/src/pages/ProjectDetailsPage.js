@@ -60,7 +60,7 @@ export default function ProjectDetailsPage(props) {
 }
 
 function loadProject(projectId) {
-  if (parseInt(projectId) == 0) {
+  if (parseInt(projectId) === 0) {
     return (
       {
         projectId: projectId,
