@@ -37,7 +37,7 @@ const StyledThemedButton = styled(Button)`
 
 export default function ThemedButton(props) {
   return (
-    <StyledThemedButton className={props.className}>
+    <StyledThemedButton className={props.className} href={props.href}>
       {props.children}
     </StyledThemedButton>
   );    

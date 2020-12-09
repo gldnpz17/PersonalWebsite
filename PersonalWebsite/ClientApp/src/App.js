@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import ProjectsPage from './pages/ProjectsPage';
 import { ThemeProvider } from 'styled-components';
+import BlogPage from './pages/BlogPage';
+import { Container } from 'react-bootstrap';
 
 const theme = {
   primary: "#455a64",
@@ -23,22 +25,28 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <NavigationBar />
-        <Switch>
-          <Route path="/index">
-            <HomePage />
-          </Route>
+        <Container fluid className="m-0 p-0 min-vh-100 d-flex flex-column">
+          <NavigationBar />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
 
-          <Route path="/projects">
-            <ProjectsPage />
-          </Route>
+            <Route path="/projects">
+              <ProjectsPage />
+            </Route>
 
-          {/*404*/}
-          <Route>
-            <p>404!</p>
-          </Route>
-        </Switch>
-        <Footer />
+            <Route path="/blog">
+              <BlogPage />
+            </Route>
+
+            {/*404*/}
+            <Route>
+              <p>404!</p>
+            </Route>
+          </Switch>
+          <Footer />
+          </Container>
       </BrowserRouter>
     </ThemeProvider>
   );

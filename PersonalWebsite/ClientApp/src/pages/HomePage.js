@@ -201,14 +201,14 @@ export default class HomePage extends React.Component {
           <Row className="w-100 m-0 flex-nowrap">
             <Col className="col-10">
               <StyledSelfIdentityRow className="d-flex flex-nowrap">
-                <span className="p-2">
+                <Col className="p-2 col-auto">
                   <StyledProfilePicture className="img-fluid" src="./logo.png"/>
-                </span>
-                <span className="mr-auto">
+                </Col>
+                <Col className="col-lg-6 p-0">
                   <h1 className="mb-0">Firdaus Bisma Suryakusuma</h1>
                   <h5>a failure of a human</h5>
-                  <p className="text-justify" style={{width:"0px", minWidth:"100%"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis. Nulla vel enim lacinia, elementum ante nec, porta velit. Elementum ante nec, porta velit. Nulla vel enim lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis.</p>
-                </span>
+                  <p className="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis. Nulla vel enim lacinia, elementum ante nec, porta velit. Elementum ante nec, porta velit. Nulla vel enim lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum et est ac facilisis.</p>
+                </Col>
               </StyledSelfIdentityRow>
             </Col>
             <Col className="col-auto d-flex p-0 ml-auto">

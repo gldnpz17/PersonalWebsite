@@ -55,11 +55,11 @@ export default class NavigationBar extends React.Component{
   render() {
     return (
       <StyledNavBar className="fixed-top w-100">
-        <StyledNavbarBrand href="/index">gldnpz</StyledNavbarBrand>
+        <StyledNavbarBrand href="/">gldnpz</StyledNavbarBrand>
 
         <Navbar.Collapse>
           <Nav>
-            <StyledNavLink href="#">Blog</StyledNavLink>
+            <StyledNavLink href="/blog">Blog</StyledNavLink>
             <StyledNavLink href="/projects">Projects</StyledNavLink>
             <StyledNavLink href="#">About</StyledNavLink>
           </Nav>

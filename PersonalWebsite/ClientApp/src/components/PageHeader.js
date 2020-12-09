@@ -51,11 +51,11 @@ export default class PageHeader extends React.Component {
         <Row className="w-100 m-0 flex-nowrap">
           <Col className="col-10">
             <StyledHeaderContentRow className="d-flex flex-nowrap">
-              <span className="mr-auto">
+              <Col className="col-12 col-lg-6">
                 <h1 className="mb-0">{this.props.pageTitle}</h1>
                 <h5>{this.props.pageSubtitle}</h5>
                 <p className="text-justify" style={{width:"0px", minWidth:"100%"}}>{this.props.pageDescription}</p>
-              </span>
+              </Col>
             </StyledHeaderContentRow>
           </Col>
           <Col className="col-auto d-flex p-0 ml-auto">
