@@ -15,5 +15,5 @@ an awfully made personal website. there's nothing much in it right now.
   - NUnit (Unit Testing Framework)
   - NSwag (Swagger API Documentation)
   - Entity Framework Core (O/RM & Database Mocking)
-  - Moq (Mocking Library for Unit Testing)
+  - Moq (Mocking Library)
   - PostgreSQL (Persistence RDBMS)
