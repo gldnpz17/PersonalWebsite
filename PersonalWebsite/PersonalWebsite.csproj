@@ -11,8 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.9.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +32,14 @@
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\personal-website\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UseCases\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Config\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

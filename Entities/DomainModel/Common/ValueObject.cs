@@ -28,7 +28,7 @@ namespace DomainModel.Common
                     return true;
                 }
 
-                if (thisValues.Current != otherValues.Current)
+                if (!thisValues.Current.Equals(otherValues.Current))
                 {
                     return false;
                 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DomainModel.ValueObjects
 {
-    public class AccountPrivilege : ValueObject
+    public class Tag : ValueObject
     {
         public string Name { get; set; }
 

@@ -4,4 +4,25 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Mapper\" />
+    <Folder Include="Common\PipelineBehaviour\" />
+    <Folder Include="Common\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entities\DomainModel\DomainModel.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Persistence\EFCorePostgres\EFCorePostgres.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Persistence\InMemoryEFCore\InMemoryEFCore.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Services\SimpleDomainServiceImplementation\SimpleDomainServiceImplementation.csproj" />
+  </ItemGroup>
+
 </Project>

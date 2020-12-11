@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DomainModel.ValueObjects;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace DomainModel.Entities
+namespace PersonalWebsite.Common.DTOs.Profiles.Educations
 {
-    public class Education
+    public class CreateEducationRequestDto
     {
-        public int Id { get; set; }
         public string Institution { get; set; }
         public string Department { get; set; }
         public DateTime StartDate { get; set; }

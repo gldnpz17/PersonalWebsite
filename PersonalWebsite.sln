@@ -5,11 +5,17 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalWebsite", "PersonalWebsite\PersonalWebsite.csproj", "{BC95CA4F-E397-4A7E-8843-5000503FEED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "Entities\DomainModel\DomainModel.csproj", "{7790059A-F6F8-4F40-82A0-903004990B17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModel", "Entities\DomainModel\DomainModel.csproj", "{7790059A-F6F8-4F40-82A0-903004990B17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "UseCases\Application\Application.csproj", "{13D28A17-2F71-4ACA-9C43-9A372E2714DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "UseCases\Application\Application.csproj", "{13D28A17-2F71-4ACA-9C43-9A372E2714DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryEFCore", "Infrastructure\Persistence\InMemoryEFCore\InMemoryEFCore.csproj", "{7F679CA9-9393-4FC7-A01B-30B95064610A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMemoryEFCore", "Infrastructure\Persistence\InMemoryEFCore\InMemoryEFCore.csproj", "{7F679CA9-9393-4FC7-A01B-30B95064610A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationTests", "Testing\ApplicationTests\ApplicationTests.csproj", "{54054368-B195-4787-A8F5-6C6945F31CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCorePostgres", "Infrastructure\Persistence\EFCorePostgres\EFCorePostgres.csproj", "{BD541F10-44CD-427B-96EF-2C54A117B986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomainServiceImplementation", "Infrastructure\Services\SimpleDomainServiceImplementation\SimpleDomainServiceImplementation.csproj", "{E1750AE2-7C4B-4F74-B8FC-CECD5ABDDD56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{7F679CA9-9393-4FC7-A01B-30B95064610A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F679CA9-9393-4FC7-A01B-30B95064610A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F679CA9-9393-4FC7-A01B-30B95064610A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54054368-B195-4787-A8F5-6C6945F31CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54054368-B195-4787-A8F5-6C6945F31CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54054368-B195-4787-A8F5-6C6945F31CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54054368-B195-4787-A8F5-6C6945F31CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD541F10-44CD-427B-96EF-2C54A117B986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD541F10-44CD-427B-96EF-2C54A117B986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD541F10-44CD-427B-96EF-2C54A117B986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD541F10-44CD-427B-96EF-2C54A117B986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1750AE2-7C4B-4F74-B8FC-CECD5ABDDD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1750AE2-7C4B-4F74-B8FC-CECD5ABDDD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1750AE2-7C4B-4F74-B8FC-CECD5ABDDD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1750AE2-7C4B-4F74-B8FC-CECD5ABDDD56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

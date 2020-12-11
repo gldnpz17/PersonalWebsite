@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModel.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace DomainModel.Entities
         public Guid Id { get; set; }
         public string Title { get; set; }
         public DateTime PublishDate { get; set; }
+        public string Summary { get; set; }
         public string GfmContent { get; set; }
-        public List<string> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
     }
 }
