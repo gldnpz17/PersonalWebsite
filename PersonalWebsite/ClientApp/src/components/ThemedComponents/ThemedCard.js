@@ -8,7 +8,7 @@ const StyledThemedCard = styled(Card)`
 
 export default function ThemedCard(props) {
   return (
-    <StyledThemedCard>
+    <StyledThemedCard className={props.className}>
       {props.children}   
     </StyledThemedCard>
   );
