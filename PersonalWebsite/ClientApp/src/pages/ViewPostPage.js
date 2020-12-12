@@ -59,7 +59,7 @@ function getPost(postId) {
       {
         postTitle: "Post1",
         postCreatedDate: "0 January 2020",
-        postContent: "*hello!*",
+        postContent: "*hello!* world!",
         postTags: [
           "tag1",
           "tag2",

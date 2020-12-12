@@ -11,7 +11,7 @@ const StyledFooterRow = styled(Row)`
 export default class Footer extends React.Component {
   render() {
     return(
-      <StyledFooterRow className="p-3 w-100 m-0">
+      <StyledFooterRow className="p-3 w-100 m-0 align-self-end">
         <Col className="d-flex mr-auto p-0">
           <span className="mr-2">
             <SocialButton href="https://github.com/gldnpz17">
