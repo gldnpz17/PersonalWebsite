@@ -11,6 +11,7 @@ namespace PersonalWebsite.Common.DTOs.Projects
     {
         public Guid Id { get; set; }
         public string ProjectName { get; set; }
+        public string Status { get; set; }
         public string Description { get; set; }
         public List<TagDto> Tags { get; set; }
     }

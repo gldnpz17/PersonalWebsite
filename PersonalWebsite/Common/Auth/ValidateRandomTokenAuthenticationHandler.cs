@@ -70,6 +70,11 @@ namespace PersonalWebsite.Common.Auth
             }
             else
             {
+                //remove cookie
+                if (cookieToken != null) {
+                    Response.Cookies.Delete("auth-cookie");
+                }
+
                 return AuthenticateResult.Fail($"invalid token supplied. token: {tokenString}");
             }
         }

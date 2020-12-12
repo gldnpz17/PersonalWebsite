@@ -1,12 +1,49 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
+import AuthContext from "../../contexts/AuthContext";
 import ThemedButton from "../ThemedComponents/ThemedButton";
 import ThemedSecondaryButton from "../ThemedComponents/ThemedSecondaryButton";
 import ThemedSvg from "../ThemedComponents/ThemedSvg";
 
 export default function LoginModal(props) {
+  const authInfo = useContext(AuthContext);
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: ""
+  });
+
+  const resetCredentials = () => {
+    setCredentials({
+      username: "",
+      password: ""
+    });
+  };
+
+  const login = async (username, password) => {
+    var response = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    });
+
+    await authInfo.checkAuthStatus();
+
+    if (response.status === 200) {
+      handleClose();
+    }
+  };
+
+  const handleClose = () => {
+    resetCredentials();
+
+    props.onHide();
+  };
+
   return (
-    <Modal centered show={props.show} onHide={props.onHide}>
+    <Modal centered show={props.show} onHide={handleClose}>
       <Modal.Body>
         <div>
           <div>
@@ -24,7 +61,15 @@ export default function LoginModal(props) {
                   </ThemedSvg>
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl placeholder="username" />
+              <Form.Control 
+                value={credentials.username} 
+                onChange={
+                  (e) => {
+                    setCredentials(prev => ({
+                      ...prev,
+                      username: e.target.value
+                    }))}} 
+                placeholder="username" />
             </InputGroup>
             <InputGroup className="mb-4">
               <InputGroup.Prepend>
@@ -34,14 +79,22 @@ export default function LoginModal(props) {
                   </ThemedSvg>
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl placeholder="password" />
+              <Form.Control                 
+                value={credentials.password} 
+                onChange={
+                  (e) => {
+                    setCredentials(prev => ({
+                      ...prev,
+                      password: e.target.value
+                    }))}} 
+                placeholder="password" />
             </InputGroup>
             <Row className="m-0">
               <Col className="p-0 pr-1">
                 <ThemedSecondaryButton className="w-100">forgot password?</ThemedSecondaryButton>
               </Col>
               <Col className="p-0 pl-1">
-                <ThemedButton className="w-100">log in</ThemedButton>
+                <ThemedButton className="w-100" onClick={login}>log in</ThemedButton>
               </Col>
             </Row>
           </div>

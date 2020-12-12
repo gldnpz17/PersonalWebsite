@@ -11,6 +11,7 @@ namespace DomainModel.Entities
     {
         public Guid Id { get; set; }
         public string ProjectName { get; set; }
+        public string Status { get; set; }
         public string SourceCodeUrl { get; set; }
         public string Description { get; set; }
         public List<Tag> Tags { get; set; }

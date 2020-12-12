@@ -34,8 +34,19 @@ export default function WritePostModal(props) {
     });
   const [newTagName, setNewTagName] = useState("");
 
-  const createPost = () => {
-    
+  const createPost = async () => {
+    var response = await fetch("/api/posts", {
+      method: "POST",
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(post)
+    });
+
+    if (response.status == 200) {
+      handleHide();
+    }
   }
 
   const resetPost = () => {
@@ -158,7 +169,7 @@ export default function WritePostModal(props) {
             </Col>
           </Form.Group>
 
-          <p>content :</p>
+          <p>content(single line breaks disabled) :</p>
           <SimpleMDE 
             onChange={handleGfmContentChange} 
             options={{
@@ -176,7 +187,7 @@ export default function WritePostModal(props) {
             <ThemedSecondaryButton onClick={handleHide} className="w-100">cancel</ThemedSecondaryButton>
           </Col>
           <Col className="p-0 pl-1">
-            <ThemedButton className="w-100">post</ThemedButton>
+            <ThemedButton className="w-100" onClick={createPost}>post</ThemedButton>
           </Col>
         </Row>
       </Modal.Body>

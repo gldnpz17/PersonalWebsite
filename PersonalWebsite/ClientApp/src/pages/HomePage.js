@@ -124,7 +124,7 @@ export default function HomePage(props) {
                           <path d="M16,15H9V13H16M19,11H9V9H19M19,7H9V5H19M21,1H7C5.89,1 5,1.89 5,3V17C5,18.11 5.9,19 7,19H21C22.11,19 23,18.11 23,17V3C23,1.89 22.1,1 21,1M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3Z" />
                         </ThemedSvg>
                         <h4 className="m-0 flex-grow-1">Blog</h4>
-                        <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                        <ThemedButton className="pt-0 pb-0" href="/blog">visit</ThemedButton>
                       </div>
                       <h6>random thoughts</h6>
                       <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future, who knows 🤷‍♂️. might even post memes here.</p>
@@ -137,7 +137,7 @@ export default function HomePage(props) {
                           <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
                         </ThemedSvg>
                         <h4 className="m-0 flex-grow-1">Projects</h4>
-                        <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                        <ThemedButton className="pt-0 pb-0" href="/projects">visit</ThemedButton>
                       </div>
                       <h6>projects i've worked on</h6>
                       <p></p>
@@ -150,7 +150,7 @@ export default function HomePage(props) {
                           <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
                         </ThemedSvg>
                         <h4 className="m-0 flex-grow-1">About</h4>
-                        <ThemedButton className="pt-0 pb-0">visit</ThemedButton>
+                        <ThemedButton className="pt-0 pb-0" href="/about">visit</ThemedButton>
                       </div>
                       <h6>know me better, i guess?</h6>
                       <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense.</p>

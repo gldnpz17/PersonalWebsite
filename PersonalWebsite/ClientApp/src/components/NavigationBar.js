@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Collapse, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
+import AuthContext from "../contexts/AuthContext";
 import LoginModal from "./modals/LoginModal";
 import ThemedButton from "./ThemedComponents/ThemedButton";
+import ThemedSecondaryButton from "./ThemedComponents/ThemedSecondaryButton";
 
 const StyledButton = styled(Button)`
   background-color: ${props => props.theme.secondary};
@@ -54,13 +56,38 @@ const StyledNavLink = styled(Nav.Link)`
 
 export default function NavigationBar(props) {
   const [showLogin, setShowLogin] = useState(false);
+  const authInfo = useContext(AuthContext);
   
-  const openLogin = () => {
+  const openLoginHandler = () => {
     setShowLogin(true);
   }
 
-  const closeLogin = () => {
+  const closeLoginHandler = () => {
     setShowLogin(false);
+  }
+
+  const logoutHandler = async () => {
+    await fetch("/api/auth/logout", {
+      method: "POST"
+    });
+
+    await authInfo.checkAuthStatus();
+  }
+
+  const AuthButton = () => {
+    if (authInfo.isLoggedIn) {
+      return (<ThemedButton onClick={logoutHandler}>logout</ThemedButton>);
+    } else {
+      return(<ThemedButton onClick={openLoginHandler}>login</ThemedButton>);
+    }
+  }
+
+  const AdminNavLink = () => {
+    if (authInfo.isLoggedIn) {
+      return (<StyledNavLink href="/admin">Admin</StyledNavLink>);
+    } else {
+      return(<></>);
+    }
   }
 
   return (
@@ -72,12 +99,13 @@ export default function NavigationBar(props) {
           <StyledNavLink href="/blog">Blog</StyledNavLink>
           <StyledNavLink href="/projects">Projects</StyledNavLink>
           <StyledNavLink href="/about">About</StyledNavLink>
+          <AdminNavLink />
         </Nav>
       </Navbar.Collapse>
 
-      <ThemedButton onClick={openLogin}>login</ThemedButton>
+      <AuthButton />
 
-      <LoginModal show={showLogin} onHide={closeLogin}/>
+      <LoginModal show={showLogin} onHide={closeLoginHandler}/>
     </StyledNavBar>
   );
 }

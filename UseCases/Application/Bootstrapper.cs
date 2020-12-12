@@ -29,13 +29,17 @@ namespace Application
         private IContainer _container;
         private ApplicationConfig _config;
 
+        private ILifetimeScope _scope;
+
         public Bootstrapper(ApplicationConfig config)
         {
             _config = config;
 
             RegisterDependencies();
 
-            Mediator = _container.Resolve<IMediator>();
+            _scope = _container.BeginLifetimeScope();
+
+            Mediator = _scope.Resolve<IMediator>();
         }
 
         private void RegisterDependencies()
@@ -85,7 +89,7 @@ namespace Application
 
                 dbContext.SaveChanges();
 
-                builder.RegisterInstance(dbContext).As<AppDbContext>();
+                builder.RegisterType<InMemoryAppDbContext>().As<AppDbContext>().InstancePerDependency();
             }
 
             _container = builder.Build();

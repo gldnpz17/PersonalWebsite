@@ -122,5 +122,11 @@ namespace PersonalWebsite.Controllers
 
             return Ok();
         }
+
+        [Authorize(AuthorizationPolicyConstants.AuthenticatedUsersOnlyPolicy)]
+        [HttpGet("authentication-check")]
+        public ActionResult AuthenticatedCheck() {
+            return Ok();
+        }
     }
 }

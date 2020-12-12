@@ -14,7 +14,7 @@ namespace InMemoryEFCore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString());
+            optionsBuilder.UseInMemoryDatabase(databaseName: "AppDb");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

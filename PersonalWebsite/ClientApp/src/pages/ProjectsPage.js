@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
@@ -15,49 +15,25 @@ const StyledContainer = styled(Container)`
 export default function ProjectsPage(props) {
   let match = useRouteMatch();
 
-  const [projects, setProjects] = useState(
-    [
-      {
-        projectId: 0,
-        projectName: "Project1",
-        projectStatus: "maintained",
-        projectDescription: "Project1Desc",
-        ProjectTags: [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
-      },
-      {
-        projectId: 1,
-        projectName: "Project2",
-        projectStatus: "completed",
-        projectDescription: "Project2Desc",
-        ProjectTags: [
-          "tag4",
-          "tag5",
-          "tag6"
-        ]
-      },
-      {
-        projectId: 2,
-        projectName: "Project3",
-        projectStatus: "abandoned",
-        projectDescription: "Project3Desc",
-        ProjectTags: [
-          "tag7",
-          "tag8",
-          "tag9",
-          "tag10",
-          "tag11",
-          "tag12",
-          "tag13",
-          "tag14",
-          "tag15"
-        ]
+  const [projects, setProjects] = useState(null);
+
+  useEffect(() => {
+    readprojects();
+  }, []);
+
+  const readprojects = async () => {
+    var response = await fetch("/api/projects", {
+      method: "GET",
+      headers: {
+        "content": "application/json",
+        "Content-Type": "application/json"
       }
-    ]
-  );
+    });
+
+    if ((await response).status === 200) {
+      setProjects(await response.json());
+    }
+  };
 
   return (
     <Switch>
@@ -66,25 +42,25 @@ export default function ProjectsPage(props) {
       </Route>
 
       <Route>
-        <StyledContainer fluid className="m-0 p-0 pt-5 pb-5">
+        <StyledContainer fluid className="m-0 p-0 pt-5 pb-5 flex-fill">
           <PageHeader pageTitle="Projects" pageSubtitle="They're all awful projects" pageDescription="why are you here?" />
           <Row className="ml-1 ml-lg-5 mr-1 mr-lg-5">
             <Col>
               <Row className="row-cols-1 ml-1 ml-lg-5 mr-1 mr-lg-5">
-                {projects.map(project => {
+                {projects?.map(project => {
                   return(
                     <Col className="pb-3">
                       <ThemedCard>
                         <Card.Body>
                           <div className="d-flex">
                             <h5 className="flex-grow-1">{project.projectName}</h5>
-                            <h5 style={{color: "darkgray"}}>{project.projectStatus}</h5>
+                            <h5 style={{color: "darkgray"}}>{project.status}</h5>
                           </div>
                           <div>
-                            <p>{project.projectDescription}</p>
+                            <p>{project.description}</p>
                           </div>
                           <div className="d-flex justify-content-end w-100">
-                            <ThemedButton className="mb-2" href={`${match.path}/${project.projectId}`}>
+                            <ThemedButton className="mb-2" href={`${match.path}/${project.id}`}>
                               details
                             </ThemedButton>
                           </div>
@@ -94,9 +70,9 @@ export default function ProjectsPage(props) {
                               <p className="pr-2">tags:</p>
                             </span>
                             <span className="d-inline">
-                              {project.ProjectTags.map(tag => {
+                              {project?.tags?.map(tag => {
                                 return(
-                                  <TagButton tagName={tag} />
+                                  <TagButton tagName={tag.name} />
                                   );
                               })}
                             </span>

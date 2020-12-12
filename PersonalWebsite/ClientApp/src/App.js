@@ -12,6 +12,8 @@ import { Container } from 'react-bootstrap';
 import AboutPage from './pages/AboutPage';
 import AdminProfilePage from './pages/AdminProfilePage';
 import AdminWelcomePage from './pages/AdminWelcomePage';
+import AuthContext from './contexts/AuthContext';
+import { useEffect, useState } from 'react';
 
 const theme = {
   primary: "#455a64",
@@ -26,30 +28,64 @@ const theme = {
 }
 
 function App() {
+  const [authInfo, setAuthInfo] = useState(
+    {
+      isLoggedIn: false,
+      checkAuthStatus: null
+    }
+  );
+
+  const checkAuthStatus = async () => {
+    var response = await fetch("/api/auth/authentication-check", {
+      method: "GET"
+    });
+
+    if (response.status === 200) {
+      setAuthInfo({
+        ...authInfo,
+        isLoggedIn: true
+      });
+    } else {
+      setAuthInfo({
+        ...authInfo,
+        isLoggedIn: false
+      })
+    }
+  };
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Container fluid className="m-0 p-0 min-vh-100 d-flex flex-column" style={{overflow: "hidden"}}>
-          <Container fluid className="flex-fill m-0 p-0 d-flex flex-column">
-            <Switch>
-              <Route path="/admin">
-                <AdminNavigationBar />
-                <AdminWelcomePage />
-              </Route>
+        <AuthContext.Provider value={{
+          ...authInfo,
+          checkAuthStatus: checkAuthStatus
+        }}>
+          <Container fluid className="m-0 p-0 min-vh-100 d-flex flex-column" style={{overflow: "hidden"}}>
+            <Container fluid className="flex-fill m-0 p-0 d-flex flex-column">
+              <Switch>
+                <Route path="/admin">
+                  <AdminNavigationBar />
+                  <AdminWelcomePage />
+                </Route>
 
-              <Route path="/">
-                <NavigationBar />
-                <HomePage />
-              </Route>
+                <Route path="/">
+                  <NavigationBar />
+                  <HomePage />
+                </Route>
 
-              {/*404*/}
-              <Route path="*">
-                <h1 className="text-center">404!</h1>
-              </Route>
-            </Switch>
+                {/*404*/}
+                <Route path="*">
+                  <h1 className="text-center">404!</h1>
+                </Route>
+              </Switch>
+            </Container>
+            <Footer />
           </Container>
-          <Footer />
-        </Container>
+        </AuthContext.Provider>
       </BrowserRouter>
     </ThemeProvider>
   );
