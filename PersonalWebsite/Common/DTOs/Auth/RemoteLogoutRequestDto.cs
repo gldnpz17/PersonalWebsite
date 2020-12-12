@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalWebsite.Common.DTOs.Auth
 {
-    public class LogoutRequestDto
+    public class RemoteLogoutRequestDto
     {
         public string Token { get; set; }
     }

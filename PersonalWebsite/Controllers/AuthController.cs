@@ -8,8 +8,10 @@ using Application.Auth.Commands.SendPasswordResetMessage;
 using Application.Auth.Queries.Login;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PersonalWebsite.Common.Auth;
 using PersonalWebsite.Common.DTOs.Auth;
 
 namespace PersonalWebsite.Controllers
@@ -39,11 +41,53 @@ namespace PersonalWebsite.Controllers
                     Password = dto.Password
                 });
 
+            Response.Cookies.Append(
+                "auth-cookie",
+                result.Token,
+                new CookieOptions()
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    HttpOnly = true
+                });
+
             return Ok(_mapper.Map<LoginResponseDto>(result));
         }
 
+        [Authorize(AuthorizationPolicyConstants.AuthenticatedUsersOnlyPolicy)]
         [HttpPost("logout")]
-        public async Task<ActionResult> Logout([FromBody]LogoutRequestDto dto)
+        public async Task<ActionResult> Logout()
+        {
+            var headerToken = Request.Headers["Auth-Token"].FirstOrDefault();
+            var cookieToken = Request.Cookies["auth-cookie"];
+
+            string tokenString;
+            //use header token first, then use the cookie token
+            if (headerToken != null)
+            {
+                tokenString = headerToken;
+            }
+            else if (cookieToken != null)
+            {
+                tokenString = cookieToken;
+            }
+            else
+            {
+                throw new Exception("Logout failure, token not found.");
+            }
+
+            await _mediator.Send(
+                new LogoutCommand()
+                {
+                    Token = tokenString
+                });
+
+            return Ok();
+        }
+
+        [Authorize(AuthorizationPolicyConstants.AuthenticatedUsersOnlyPolicy)]
+        [HttpPost("remote-logout")]
+        public async Task<ActionResult> RemoteLogout([FromBody]RemoteLogoutRequestDto dto)
         {
             await _mediator.Send(
                 new LogoutCommand()

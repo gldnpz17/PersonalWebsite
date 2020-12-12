@@ -30,7 +30,7 @@ namespace PersonalWebsite.Common.Auth
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             var headerToken = Request.Headers["Auth-Token"].FirstOrDefault();
-            var cookieToken = Request.Cookies["session-token"];
+            var cookieToken = Request.Cookies["auth-cookie"];
 
             string tokenString;
             //use header token first, then use the cookie token
