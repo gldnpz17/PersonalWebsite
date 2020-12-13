@@ -1,5 +1,6 @@
 # PersonalWebsite
-an awfully made personal website. there's nothing much in it right now.
+an awfully made personal website. there's nothing much in it right now.  
+preview: https://gldnpzpersonalwebsite.azurewebsites.net
 
 ![ain't much](https://i.kym-cdn.com/entries/icons/original/000/028/021/work.jpg)
 
