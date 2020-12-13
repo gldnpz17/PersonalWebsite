@@ -44,7 +44,7 @@ export default function ViewPostPage(props) {
           <ThemedCard className="flex-fill d-flex">
             <div className="m-3 h-100 d-flex flex-column flex-fill">
               <h5 className="m-0">Firdaus Bisma Suryakusuma</h5>
-              <h6>{DateTimeFormatter.parseToDate(post?.publishDate) + " " + DateTimeFormatter.parseToHoursAndMinutes(post?.publishDate)}</h6>
+              <h6>{DateTimeFormatter.parseToDate(post?.publishDate)}</h6>
               <hr className="m-1"/>
               <div className="flex-fill" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked((post === null) ? "" : post.gfmContent))}} />
               <hr className="mt-2 mr-1 ml-1"/>
