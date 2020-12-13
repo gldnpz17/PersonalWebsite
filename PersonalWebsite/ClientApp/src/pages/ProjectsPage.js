@@ -43,7 +43,7 @@ export default function ProjectsPage(props) {
 
       <Route>
         <StyledContainer fluid className="m-0 p-0 pt-5 pb-5 flex-fill">
-          <PageHeader pageTitle="Projects" pageSubtitle="They're all awful projects" pageDescription="why are you here?" />
+          <PageHeader pageTitle="Projects" pageSubtitle="projects i've worked on" pageDescription="a complete list of projects i've worked on. this is also where i keep the documentation for my projects(wip). you could also download an automatically generated portfolio(wip)." />
           <Row className="ml-1 ml-lg-5 mr-1 mr-lg-5">
             <Col>
               <Row className="row-cols-1 ml-1 ml-lg-5 mr-1 mr-lg-5">

@@ -9,10 +9,10 @@ namespace DomainModel.ValueObjects
 {
     public class Skill : ValueObject
     {
-        public SkillType SkillType { get; set; }
-        public string Name { get; set; }
-        public double Progress { get; set; }
-        public string Description { get; set; }
+        public virtual SkillType SkillType { get; set; }
+        public virtual string Name { get; set; }
+        public virtual double Progress { get; set; }
+        public virtual string Description { get; set; }
 
         protected override IEnumerable<object> GetAtomicValues()
         {

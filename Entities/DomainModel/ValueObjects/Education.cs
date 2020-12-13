@@ -9,11 +9,11 @@ namespace DomainModel.ValueObjects
 {
     public class Education : ValueObject
     {
-        public string Institution { get; set; }
-        public string Department { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public string Description { get; set; }
+        public virtual string Institution { get; set; }
+        public virtual string Department { get; set; }
+        public virtual DateTime StartDate { get; set; }
+        public virtual DateTime EndDate { get; set; }
+        public virtual string Description { get; set; }
 
         protected override IEnumerable<object> GetAtomicValues()
         {

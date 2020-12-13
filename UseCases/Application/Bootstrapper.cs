@@ -8,6 +8,7 @@ using EFCorePostgres;
 using InMemoryEFCore;
 using MediatR;
 using MediatR.Extensions.Autofac.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using SimpleDomainServiceImplementation.AlphanumericTokenGenerator;
 using SimpleDomainServiceImplementation.DateTimeService;
 using SimpleDomainServiceImplementation.PasswordHashingService;
@@ -90,6 +91,38 @@ namespace Application
                 dbContext.SaveChanges();
 
                 builder.RegisterType<InMemoryAppDbContext>().As<AppDbContext>().InstancePerDependency();
+            } 
+            else
+            {
+                var dbContext = new AppDbContext();
+
+                if (!dbContext.Accounts.Any())
+                {
+                    dbContext.Accounts.Add(
+                        new Account()
+                        {
+                            Username = "admin",
+                            EmailAddress = "admin@mail.com",
+                            PasswordCredential = new PasswordCredential() { HashedPassword = "2C3ZkIwZfWmlXu0uXeQM96ZQXGWZbYV2WAeuNYYZgzQ0Z4FTlpU0HxfKzFb3NIA703OAutgdUB9OnhDv+0dQE2GtAJNiqN3eFxd7VYCMQ0fRmJCKhy2aTp3JqqWwAc4Br4k8uNVTcGQ9z0L2NaPB9kKZ6fSj4oUDjxtv6MZzW18oUowyNtGXFtVhmTGML4bg8iPURA2yQMSzXcWgha/j68nzN7f8Ct6JpmW0E4W1b8lJ2LhyEGYwWhoArWXpnj3zroNkFCMBPI96jmlHMicqD086MecCrOcJJL/x2CfX5vCFRC9wiVwapF8tQqvuxo7xv4jHADGWStsef8NIcATrbw==", Salt = "tkDckBUZcXp3NTxpboOStZKbdGzqC+7jA0o8FxfMZYm24nWDc7K/tRFlsEOs1qKwbFRj5+LPBHHUcmS66C7PdQ==" },
+                            AuthTokens = new List<AuthToken>(),
+                            PasswordResetTokens = new List<PasswordResetToken>()
+                        });
+                }
+
+                if (!dbContext.Profiles.Any())
+                {
+                    dbContext.Profiles.Add(
+                        new DomainModel.Entities.Profile()
+                        {
+                            Id = Guid.NewGuid(),
+                            Educations = new List<Education>(),
+                            Skills = new List<Skill>()
+                        });
+                }
+
+                dbContext.SaveChanges();
+
+                builder.RegisterType<AppDbContext>().As<AppDbContext>().InstancePerDependency();
             }
 
             _container = builder.Build();

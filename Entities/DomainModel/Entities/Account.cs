@@ -12,11 +12,11 @@ namespace DomainModel.Entities
 {
     public class Account
     {
-        public string Username { get; set; }
-        public PasswordCredential PasswordCredential { get; set; }
-        public string EmailAddress { get; set; }
-        public List<AuthToken> AuthTokens { get; set; }
-        public List<PasswordResetToken> PasswordResetTokens { get; set; }
+        public virtual string Username { get; set; }
+        public virtual PasswordCredential PasswordCredential { get; set; }
+        public virtual string EmailAddress { get; set; }
+        public virtual List<AuthToken> AuthTokens { get; set; }
+        public virtual List<PasswordResetToken> PasswordResetTokens { get; set; }
 
         public AuthToken Login( 
             string password, 

@@ -10,8 +10,8 @@ namespace DomainModel.ValueObjects
 {
     public class PasswordCredential : ValueObject
     {
-        public string HashedPassword { get; set; }
-        public string Salt { get; set; }
+        public virtual string HashedPassword { get; set; }
+        public virtual string Salt { get; set; }
 
         protected override IEnumerable<object> GetAtomicValues()
         {

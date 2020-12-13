@@ -91,7 +91,8 @@ export default function NavigationBar(props) {
   }
 
   return (
-    <StyledNavBar className="fixed-top w-100">
+    <StyledNavBar expand="md" className="fixed-top w-100">
+      <Navbar.Toggle />
       <StyledNavbarBrand href="/">gldnpz</StyledNavbarBrand>
 
       <Navbar.Collapse>

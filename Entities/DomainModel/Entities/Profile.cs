@@ -9,8 +9,8 @@ namespace DomainModel.Entities
 {
     public class Profile
     {
-        public Guid Id { get; set; }
-        public List<Education> Educations { get; set; }
-        public List<Skill> Skills { get; set; }
+        public virtual Guid Id { get; set; }
+        public virtual List<Education> Educations { get; set; }
+        public virtual List<Skill> Skills { get; set; }
     }
 }

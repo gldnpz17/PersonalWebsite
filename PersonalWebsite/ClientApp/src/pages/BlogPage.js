@@ -45,7 +45,7 @@ export default function BlogPage(props) {
 
       <Route>
         <StyledContainer fluid className="m-0 p-0 pt-5 pb-5 flex-fill">
-          <PageHeader pageTitle="Blog" pageSubtitle="it's all shitposts" pageDescription="nobody reads these" />
+          <PageHeader pageTitle="Blog" pageSubtitle="random thoughts" pageDescription="not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future 🤷‍♂️. might even post memes here." />
           <Row className="ml-1 ml-lg-5 mr-1 mr-lg-5">
             <Col>
               <Row className="row-cols-1 ml-1 ml-lg-5 mr-1 mr-lg-5">

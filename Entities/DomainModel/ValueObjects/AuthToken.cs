@@ -8,7 +8,7 @@ namespace DomainModel.ValueObjects
 {
     public class AuthToken
     {
-        public string Token { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public virtual string Token { get; set; }
+        public virtual DateTime CreatedAt { get; set; }
     }
 }

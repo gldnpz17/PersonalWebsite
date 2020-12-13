@@ -9,12 +9,12 @@ namespace DomainModel.Entities
 {
     public class Project
     {
-        public Guid Id { get; set; }
-        public string ProjectName { get; set; }
-        public string Status { get; set; }
-        public string SourceCodeUrl { get; set; }
-        public string Description { get; set; }
-        public List<Tag> Tags { get; set; }
-        public string GfmDetails { get; set; }
+        public virtual Guid Id { get; set; }
+        public virtual string ProjectName { get; set; }
+        public virtual string Status { get; set; }
+        public virtual string SourceCodeUrl { get; set; }
+        public virtual string Description { get; set; }
+        public virtual List<Tag> Tags { get; set; }
+        public virtual string GfmDetails { get; set; }
     }
 }

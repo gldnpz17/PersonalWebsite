@@ -20,6 +20,14 @@ namespace PersonalWebsite
 {
     public class Startup
     {
+        private IWebHostEnvironment _env;
+
+        public Startup(
+            IWebHostEnvironment env)
+        {
+            _env = env;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -55,14 +63,26 @@ namespace PersonalWebsite
                 });
 
             //register usecase/application layer mediator
-            var applicationBootstrapper = new Bootstrapper(
-                new ApplicationConfig() 
+            ApplicationConfig applicationConfig;
+
+            if (_env.IsDevelopment())
+            {
+                applicationConfig = new ApplicationConfig()
                 {
                     Environment = TypeOfEnvironment.Development
-                });
+                };
+            }
+            else
+            {
+                applicationConfig = new ApplicationConfig()
+                {
+                    Environment = TypeOfEnvironment.Production
+                };
+            }
+            var applicationBootstrapper = new Bootstrapper(applicationConfig);
             services.AddSingleton(typeof(IMediator), applicationBootstrapper.Mediator);
 
-            //register authnetication service
+            //register authentication service
             services.AddAuthentication(
                 (config) =>
                 {

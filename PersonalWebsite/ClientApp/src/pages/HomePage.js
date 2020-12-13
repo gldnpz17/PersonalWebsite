@@ -99,11 +99,14 @@ export default function HomePage(props) {
                   <Col className="p-2 col-auto">
                     <StyledProfilePicture className="img-fluid" src="./logo.png"/>
                   </Col>
-                  <Col className="col-lg-6 p-0">
-                    <h1 className="mb-0 d-none d-sm-block">Firdaus Bisma Suryakusuma</h1>
-                    <h2 className="mb-0 d-block d-sm-none">Firdaus Bisma Suryakusuma</h2>
-                    <h5>amateur software developer, undergraduate IT student</h5>
-                    <p className="text-justify">first of all, thanks for paying a visit 👋. also, i apologize for the (currently) awful website. i've only started learning web development around a month ago. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget mattis magna, ut rutrum libero. Praesent pellentesque tincidunt posuere. </p>
+                  <Col className="col-lg-7 p-0">
+                    <h1 className="mb-0 d-none d-xl-block">Firdaus Bisma Suryakusuma</h1>
+                    <h1 className="mb-0 d-none d-lg-block d-xl-none">Firdaus Bisma S</h1>
+                    <h1 className="mb-0 d-none d-sm-block d-lg-none">Firdaus Bisma</h1>
+                    <h2 className="mb-0 d-block d-sm-none">Firdaus Bisma</h2>
+                    <h5 className="mb-0 d-none d-sm-block">amateur software developer, undergraduate IT student</h5>
+                    <h6 className="mb-0 d-block d-sm-none">amateur software developer, undergraduate IT student</h6>
+                    <p className="text-justify mt-2">first of all, thanks a lot for paying a visit 👋. also, i apologize for the (currently) awful website. i've only started learning frontend web development around a month ago (used to exclusively study backend development prior to this). currently in desperate need for SKPI (surat keterangan pengantar ijazah) 😢. and so, i'm open to every possible opportunity. (contact informations are in the about page)</p>
                   </Col>
                 </StyledSelfIdentityRow>
               </Col>
@@ -112,12 +115,12 @@ export default function HomePage(props) {
               </Col>
             </Row>
           </StyledJumbotron>
-          <Row className="ml-5 mr-5">
+          <Row className="ml-3 mr-3 ml-md-5 mr-md-5">
             <Col>
               <h2 className="text-center">Site Contents</h2>
-              <Row className="mb-5">
-                <CardDeck>
-                  <ThemedCard className="ml-2 mr-2 mb-4">
+              <Row className="row-cols-1 row-cols-lg-3 mb-5">
+                <Col className="p-1">
+                  <ThemedCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -127,10 +130,12 @@ export default function HomePage(props) {
                         <ThemedButton className="pt-0 pb-0" href="/blog">visit</ThemedButton>
                       </div>
                       <h6>random thoughts</h6>
-                      <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future, who knows 🤷‍♂️. might even post memes here.</p>
+                      <p className="text-justify">not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future 🤷‍♂️. might even post memes here.</p>
                     </Card.Body>
                   </ThemedCard>
-                  <ThemedCard className="ml-2 mr-2 mb-4">
+                </Col>
+                <Col className="p-1">
+                  <ThemedCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -140,10 +145,12 @@ export default function HomePage(props) {
                         <ThemedButton className="pt-0 pb-0" href="/projects">visit</ThemedButton>
                       </div>
                       <h6>projects i've worked on</h6>
-                      <p></p>
+                      <p className="text-justify">a complete list of projects i've worked on. this is also where i keep the documentation for my projects(wip). you could also download an automatically generated portfolio(wip).</p>
                     </Card.Body>
                   </ThemedCard>
-                  <ThemedCard className="ml-2 mr-2 mb-4">
+                </Col>
+                <Col className="p-1">
+                  <ThemedCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -152,11 +159,11 @@ export default function HomePage(props) {
                         <h4 className="m-0 flex-grow-1">About</h4>
                         <ThemedButton className="pt-0 pb-0" href="/about">visit</ThemedButton>
                       </div>
-                      <h6>know me better, i guess?</h6>
-                      <p>not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense.</p>
+                      <h6>a little bit about myself</h6>
+                      <p className="text-justify">some general information about myself and my contact information. you could also download an automatically generated resume(wip).</p>
                     </Card.Body>
-                  </ThemedCard>
-                </CardDeck> 
+                  </ThemedCard> 
+                </Col>
               </Row>
 
               <h2 className="text-center">Changelogs</h2>
