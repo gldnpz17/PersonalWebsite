@@ -11,7 +11,7 @@ preview: https://gldnpzpersonalwebsite.azurewebsites.net
   - ASP.NET Core (Web Framework)
   - Autofac (Dependency Injection)
   - Automapper (Object-Object Mapper)
-  - FluentValidation (Input Validation)
+  - ~FluentValidation (Input Validation)~(haven't had the time to set up proper server-side validation)
   - MediatR (Mediator Pattern Implementation for CQRS)
   - NUnit (Unit Testing Framework)
   - NSwag (Swagger API Documentation)
