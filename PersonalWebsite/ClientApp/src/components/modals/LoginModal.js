@@ -33,6 +33,7 @@ export default function LoginModal(props) {
 
     if (response.status === 200) {
       handleClose();
+      window.location.replace("/admin");
     }
   };
 
