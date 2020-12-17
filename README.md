@@ -1,5 +1,6 @@
 # PersonalWebsite
-an awfully made personal website. there's nothing much in it right now.
+an awfully made personal website. there's nothing much in it right now.  
+preview: https://gldnpzpersonalwebsite.azurewebsites.net
 
 ![ain't much](https://i.kym-cdn.com/entries/icons/original/000/028/021/work.jpg)
 
@@ -10,7 +11,7 @@ an awfully made personal website. there's nothing much in it right now.
   - ASP.NET Core (Web Framework)
   - Autofac (Dependency Injection)
   - Automapper (Object-Object Mapper)
-  - FluentValidation (Input Validation)
+  - ~FluentValidation (Input Validation)~(haven't had the time to set up proper server-side validation)
   - MediatR (Mediator Pattern Implementation for CQRS)
   - NUnit (Unit Testing Framework)
   - NSwag (Swagger API Documentation)
