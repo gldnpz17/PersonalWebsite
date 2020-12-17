@@ -106,7 +106,7 @@ export default function AboutPage() {
           </Row>
           
           {/*Achievements and Experiences*/}
-          <h3 className="text-center">Skills</h3>
+          <h3 className="text-center">Achievements and Experiences</h3>
           <h1 className="text-center mb-5" style={{color: "darkgray"}}>nothing to show yet, unfortunately 😢</h1>
 
           {/*Contact*/}
