@@ -1,6 +1,6 @@
 # PersonalWebsite
 an awfully made personal website. there's nothing much in it right now.  
-preview: gldnpz.com  
+preview: https://gldnpz.com  
 backup(just in case something went wrong with the server): https://gldnpzpersonalwebsite.azurewebsites.net
 
 ![ain't much](https://i.kym-cdn.com/entries/icons/original/000/028/021/work.jpg)
