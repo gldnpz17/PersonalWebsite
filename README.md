@@ -6,7 +6,7 @@ an awfully made personal website. there's still a lot of room for improvement.
 ## Tech Stack
 ### Frontend
   - React.js
-  - Bootstrap, react-boostrap
+  - Bootstrap
 ### Backend
   - ASP.NET Core
   - PostgreSQL
