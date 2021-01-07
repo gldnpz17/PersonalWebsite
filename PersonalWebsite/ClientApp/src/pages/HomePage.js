@@ -1,5 +1,4 @@
 ﻿import React from "react";
-import "./HomePage.scss";
 import EducationCard from "../components/EducationCard";
 import {Button, Card, CardColumns, CardDeck, Col, Container, Jumbotron, Nav, NavItem, Row, Tab} from "react-bootstrap";
 import SkillTabContent from "../components/SkillTabContent";

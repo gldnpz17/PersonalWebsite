@@ -1,16 +1,10 @@
 ﻿using Application.Auth.Queries.Login;
 using ApplicationTests.Common.Mocks;
-using DomainModel.Entities;
 using DomainModel.Services;
-using DomainModel.ValueObjects;
-using InMemoryEFCore;
 using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

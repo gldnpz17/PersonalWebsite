@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DomainModel.Common
 {
@@ -23,7 +19,7 @@ namespace DomainModel.Common
             //compare every value
             while (thisValues.MoveNext() && otherValues.MoveNext())
             {
-                if (thisValues.Current == null && thisValues.Current == null)
+                if (thisValues.Current == null)
                 {
                     return true;
                 }
@@ -43,16 +39,6 @@ namespace DomainModel.Common
             {
                 return false;
             }
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }

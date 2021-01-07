@@ -45,25 +45,21 @@ export default function AboutPage() {
         <Col className="col-10">
           {/*Education*/}
           <h3 className="text-center">Education</h3>
-          <Row className="justify-content-center mb-5">
-            <CardColumns id="education-list">
-              {
-                educations.map((education) => {
-                  return (
-                    <Row className="justify-content-center">                    
-                      <Col className="col-lg-7 col-md-9 col-sm-11" key={education.institutionName}>
-                        <EducationCard
-                        institutionName={education.institutionName}
-                        departmentName={education.departmentName}
-                        startYear={education.startYear}
-                        endYear={education.endYear}
-                        description={education.description} />
-                      </Col>
-                    </Row>
-                  );
-                })
-              }
-            </CardColumns>
+          <Row className="justify-content-center mb-5 row-cols-1">
+            {
+              educations.map((education) => {
+                return (               
+                  <Col className="col-lg-7 col-md-9 col-sm-11 pb-3" key={education.institutionName}>
+                    <EducationCard
+                    institutionName={education.institutionName}
+                    departmentName={education.departmentName}
+                    startYear={education.startYear}
+                    endYear={education.endYear}
+                    description={education.description} />
+                  </Col>
+                );
+              })
+            }
           </Row>
 
           {/*Skills*/}

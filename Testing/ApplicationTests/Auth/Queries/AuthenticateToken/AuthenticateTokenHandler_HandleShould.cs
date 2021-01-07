@@ -3,12 +3,7 @@ using ApplicationTests.Common.Mocks;
 using DomainModel.Services;
 using Moq;
 using NUnit.Framework;
-using SimpleDomainServiceImplementation.DateTimeService;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
