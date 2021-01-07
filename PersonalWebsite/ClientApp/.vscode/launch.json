@@ -17,5 +17,11 @@
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
         }
+    ],
+    "compounds": [
+        {
+            "name": "Launch client and debug",
+            "configurations": ["Run npm start", "Launch Chrome against localhost"]
+        }
     ]
 }
