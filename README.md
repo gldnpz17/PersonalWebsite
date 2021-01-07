@@ -1,20 +1,16 @@
-# PersonalWebsite
-an awfully made personal website. there's nothing much in it right now.  
-preview: https://gldnpzpersonalwebsite.azurewebsites.net
+# gldnpz.com
+an awfully made personal website. there's still a lot of room for improvement.
 
 ![ain't much](https://i.kym-cdn.com/entries/icons/original/000/028/021/work.jpg)
 
-## Frameworks & Libraries
+## Tech Stack
 ### Frontend
+  - React.js
+  - Bootstrap
 ### Backend
-  - .NET Core
-  - ASP.NET Core (Web Framework)
-  - Autofac (Dependency Injection)
-  - Automapper (Object-Object Mapper)
-  - ~FluentValidation (Input Validation)~(haven't had the time to set up proper server-side validation)
-  - MediatR (Mediator Pattern Implementation for CQRS)
-  - NUnit (Unit Testing Framework)
-  - NSwag (Swagger API Documentation)
-  - Entity Framework Core (O/RM & Database Mocking)
-  - Moq (Mocking Library)
-  - PostgreSQL (Persistence RDBMS)
+  - ASP.NET Core
+  - PostgreSQL
+### Deployment
+  - Docker
+  - Apache
+  - Ubuntu
