@@ -1,6 +1,5 @@
 ﻿using Application.Common.Configuration;
 using Autofac;
-using AutoMapper;
 using DomainModel.Entities;
 using DomainModel.Services;
 using DomainModel.ValueObjects;
@@ -8,7 +7,6 @@ using EFCorePostgres;
 using InMemoryEFCore;
 using MediatR;
 using MediatR.Extensions.Autofac.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using SimpleDomainServiceImplementation.AlphanumericTokenGenerator;
 using SimpleDomainServiceImplementation.DateTimeService;
 using SimpleDomainServiceImplementation.PasswordHashingService;
@@ -18,8 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Application.Projects.Commands.CreateProject;
 using Application.Projects.Commands.DeleteProject;
@@ -10,7 +9,6 @@ using AutoMapper;
 using DomainModel.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PersonalWebsite.Common.Auth;
 using PersonalWebsite.Common.DTOs.Projects;

@@ -55,8 +55,8 @@ export default function BlogPage(props) {
                       <ThemedCard>
                         <Card.Body>
                           <h5 className="m-0">{post?.title}</h5>
-                          <h6 style={{color: "darkslategray"}}>{DateTimeFormatter.parseToDate(post?.publishDate) + " " + DateTimeFormatter.parseToHoursAndMinutes(post?.publishDate)}</h6>
-                          <p>{post?.description}</p>
+                          <h6 style={{color: "darkslategray"}}>{DateTimeFormatter.parseToDate(post?.publishDate)}</h6>
+                          <p>{post?.summary}</p>
                           <div className="d-flex justify-content-end">
                             <ThemedButton className="pt-0 pb-0" href={`${match.path}/${post?.id}`}>
                               read more

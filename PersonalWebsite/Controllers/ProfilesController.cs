@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Profile.Educations.Commands.CreateEducation;
 using Application.Profile.Educations.Commands.DeleteEducation;
@@ -12,7 +10,6 @@ using AutoMapper;
 using DomainModel.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PersonalWebsite.Common.Auth;
 using PersonalWebsite.Common.DTOs.Profiles.Educations;
