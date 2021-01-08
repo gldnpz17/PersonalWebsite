@@ -40,15 +40,22 @@ namespace PersonalWebsite.Controllers
                     Password = dto.Password
                 });
 
-            Response.Cookies.Append(
-                "auth-cookie",
-                result.Token,
-                new CookieOptions()
-                {
-                    Secure = true,
-                    SameSite = SameSiteMode.Strict,
-                    HttpOnly = true
-                });
+            var cookieOptions = new CookieOptions()
+            {
+                SameSite = SameSiteMode.Strict,
+                HttpOnly = true
+            };
+
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+            {
+                cookieOptions.Secure = false;
+            }
+            else
+            {
+                cookieOptions.Secure = true;
+            }
+
+            Response.Cookies.Append("auth-cookie", result.Token, cookieOptions);
 
             return Ok(_mapper.Map<LoginResponseDto>(result));
         }

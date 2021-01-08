@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
+import ShadowCard from "./shadow-card";
 
 const StyledEducationCard = styled(Card)`
   border-color: #1c313a;
@@ -26,13 +27,13 @@ class EducationCard extends React.Component{
 
   render() {
     return(
-      <StyledEducationCard>
+      <ShadowCard>
         <Card.Body>
           <Card.Title>{this.state.cardtitle}</Card.Title>
           <Card.Subtitle>{this.state.cardSubtitle}</Card.Subtitle>
           <p>{this.state.cardDescription}</p>
         </Card.Body>
-      </StyledEducationCard>
+      </ShadowCard>
     )
   }
 }

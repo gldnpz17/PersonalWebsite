@@ -6,6 +6,26 @@ import PageHeader from "../components/PageHeader";
 import SkillTabContent from "../components/SkillTabContent";
 import ThemedCard from "../components/ThemedComponents/ThemedCard";
 import PrimaryThemedFlatCard from "../components/ThemedComponents/PrimaryThemedFlatCard";
+import SkillCard from "../components/skill-card";
+
+import csharpLogo from "../images/csharp_logo.png";
+import javascriptLogo from "../images/javascript_logo.png";
+import dockerLogo from "../images/docker_logo.png";
+import apacheLogo from "../images/apache_logo.png";
+import reactLogo from "../images/react_logo.png";
+import aspnetcoreLogo from "../images/aspnetcore_logo.png";
+import expressLogo from "../images/express_logo.png";
+import redisLogo from "../images/redis_logo.png";
+import postgresLogo from "../images/postgres_logo.png";
+import mongodbLogo from "../images/mongodb_logo.png";
+import graphqlLogo from "../images/graphql_logo.png";
+
+import lineLogo from "../images/line_logo.png";
+import whatsappLogo from "../images/whatsapp_logo.png";
+import telegramLogo from "../images/telegram_logo.png";
+
+import ShadowCard from "../components/shadow-card";
+import ContactCard from "../components/contact-card";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;
@@ -33,6 +53,74 @@ const StyledNavItem = styled(Nav.Item)`
   }
 `;
 
+const StyledTimelineDiv = styled.div`
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+ 
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0.1rem;
+    transform: translateX(-0.05rem);
+    background: linear-gradient(to bottom , transparent, ${props => props.theme.secondary} 4rem, ${props => props.theme.secondary} calc(100% - 4rem), transparent);
+  }
+`;
+
+const StyledTimelineContainer = styled.div`
+  width: 50%;
+  position: relative;
+  margin-bottom: 2rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 50%;
+    border: 0.1rem solid ${props => props.theme.secondary};
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    transition-duration: 1.5s;
+  }
+
+  &.left::after {
+    left: calc(100% - 0.6rem);
+  }
+
+  &.right::after {
+    left: -0.6rem;
+  }
+
+  &:hover {
+    ::after {
+      background-color: ${props => props.theme.secondaryLight};
+      border: 0.1rem solid ${props => props.theme.secondaryDark};
+
+      transition-duration: 0.5s;
+    }
+  }
+
+  &.left {
+    padding-right: 2rem;
+  }
+
+  &.right {
+    left: 50%;
+    padding-left: 2rem;
+  }
+`;
+
+const StyledTimelineCard = styled(ShadowCard)`
+  height: 5rem;
+`;
+
 export default function AboutPage() {
   const [educations, setEducations] = useState(getEducations());
 
@@ -44,120 +132,55 @@ export default function AboutPage() {
       <Row className="justify-content-center w-100 m-0">
         <Col className="col-10">
           {/*Education*/}
-          <h3 className="text-center">Education</h3>
-          <Row className="justify-content-center mb-5 row-cols-1">
+          <h2 className="text-center">Education</h2>
+          <StyledTimelineDiv className="mb-5">
             {
-              educations.map((education) => {
+              educations.map((education, index) => {
                 return (               
-                  <Col className="col-lg-7 col-md-9 col-sm-11 pb-3" key={education.institutionName}>
+                  <StyledTimelineContainer className={(index % 2 == 0) ? "left" : "right"} key={education.institutionName}>
                     <EducationCard
-                    institutionName={education.institutionName}
-                    departmentName={education.departmentName}
-                    startYear={education.startYear}
-                    endYear={education.endYear}
-                    description={education.description} />
-                  </Col>
+                      institutionName={education.institutionName}
+                      departmentName={education.departmentName}
+                      startYear={education.startYear}
+                      endYear={education.endYear}
+                      description={education.description} />
+                  </StyledTimelineContainer>
                 );
               })
             }
+          </StyledTimelineDiv>
+
+          {/*New Skills*/}
+          <h2 className="text-center mb-2">Skills</h2>
+          <h4 className="text-center mb-0">Programming Languages</h4>
+          <Row className="justify-content-center mb-4">
+            <SkillCard skillName="C-Sharp" src={csharpLogo} />
+            <SkillCard skillName="Javascript" src={javascriptLogo} />
+          </Row>
+          <h4 className="text-center mb-0">Technologies</h4>
+          <Row className="justify-content-center mb-5">
+            <SkillCard skillName="React.js" src={reactLogo} />
+            <SkillCard skillName="ASP.NET Core" src={aspnetcoreLogo} />
+            <SkillCard skillName="Express.js" src={expressLogo} />
+            <SkillCard skillName="GraphQL" src={graphqlLogo} />
+            <SkillCard skillName="PostgreSQL" src={postgresLogo} />
+            <SkillCard skillName="MongoDB" src={mongodbLogo} />
+            <SkillCard skillName="Redis" src={redisLogo} />
+            <SkillCard skillName="Apache" src={apacheLogo} />
+            <SkillCard skillName="Docker" src={dockerLogo} />
           </Row>
 
-          {/*Skills*/}
-          <h3 className="text-center">Skills</h3>
-          <Row className="justify-content-center mb-5">
-            <StyledSkillsTabCard id="skills-tab-card" className="w-100">
-              <Card.Body>
-                <Tab.Container defaultActiveKey="programmingLanguages">
-                  <Row>
-                    <Col className="col-12 col-lg-2">
-                      <Nav className="flex-column" variant="pills" fill justify>
-                        <StyledNavItem className="h-100">
-                          <Nav.Link className="m-1" eventKey="programmingLanguages">Programming Languages</Nav.Link>
-                        </StyledNavItem>
-                        <StyledNavItem className="h-100">
-                          <Nav.Link className="m-1" eventKey="loremipsum">Lorem Ipsum</Nav.Link>
-                        </StyledNavItem>
-                        <StyledNavItem className="h-100">
-                          <Nav.Link className="m-1" eventKey="nonTechnical">Non Technical</Nav.Link>
-                        </StyledNavItem>
-                      </Nav>
-                    </Col>
-                    <Col className="col-12 col-lg-10">
-                      <Tab.Content>
-                        <Tab.Pane eventKey="programmingLanguages">
-                          <SkillTabContent skills={skills.filter(i => i.type === "programmingLanguage")} />
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="loremipsum">
-                          <SkillTabContent skills={skills.filter(i => i.type === "loremipsum")} />
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="nonTechnical">
-                          <SkillTabContent skills={skills.filter(i => i.type === "nonTechnical")} />
-                        </Tab.Pane>
-                      </Tab.Content>
-                    </Col>
-                  </Row>
-                </Tab.Container>
-              </Card.Body>
-            </StyledSkillsTabCard>
-          </Row>
-          
           {/*Achievements and Experiences*/}
-          <h3 className="text-center">Achievements and Experiences</h3>
+          <h2 className="text-center">Achievements and Experiences</h2>
           <h1 className="text-center mb-5" style={{color: "darkgray"}}>nothing to show yet, unfortunately 😢</h1>
 
           {/*Contact*/}
-          <h3 className="text-center">Contacts</h3>
-          <ThemedCard>
-            <Card.Body>
-              <Row className="row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <Col className="p-1">
-                  <PrimaryThemedFlatCard>
-                    <Card.Body>
-                      <Row>
-                        <Col className="col-auto p-1">
-                          <img style={{maxWidth:"4rem", maxHeight:"4rem"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/480px-LINE_logo.svg.png" />
-                        </Col>
-                        <Col className="p-1 align-content-center">
-                          <h3 className="m-0">LINE</h3>
-                          <p className="m-0">goldenpanzer17</p>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  </PrimaryThemedFlatCard>
-                </Col>
-                <Col className="p-1">
-                  <PrimaryThemedFlatCard>
-                    <Card.Body>
-                      <Row>
-                        <Col className="col-auto p-1">
-                          <img style={{maxWidth:"4rem", maxHeight:"4rem"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" />
-                        </Col>
-                        <Col className="p-1 align-content-center">
-                          <h3 className="m-0">WhatsApp</h3>
-                          <p className="m-0">(+62)88803988161</p>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  </PrimaryThemedFlatCard>
-                </Col>
-                <Col className="p-1">
-                  <PrimaryThemedFlatCard>
-                    <Card.Body>
-                      <Row>
-                        <Col className="col-auto p-1">
-                          <img style={{maxWidth:"4rem", maxHeight:"4rem"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/500px-Telegram_logo.svg.png" />
-                        </Col>
-                        <Col className="p-1 align-content-center">
-                          <h3 className="m-0">Telegram</h3>
-                          <p className="m-0">(+62)88803988161</p>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  </PrimaryThemedFlatCard>
-                </Col>
-              </Row>
-            </Card.Body>
-          </ThemedCard>
+          <h2 className="text-center">Contacts</h2>
+          <Row className="justify-content-center">
+            <ContactCard type="LINE" contact="goldenpanzer17" src={lineLogo} />
+            <ContactCard type="Whatsapp" contact="(+62)88803988161" src={whatsappLogo} />
+            <ContactCard type="Telegram" contact="(+62)88803988161" src={telegramLogo} />
+          </Row>
         </Col>
       </Row>
     </StyledContainer>
