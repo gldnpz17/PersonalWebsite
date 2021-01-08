@@ -37,6 +37,8 @@ const StyledButton = styled(Button)`
 
 const StyledNavBar = styled(Navbar)`
   background-color: #1c313a;
+
+  box-shadow: 0rem 0.05rem 0.5rem ${props => props.theme.primaryDark};
 `;
 
 const StyledNavbarBrand = styled(Navbar.Brand)`
