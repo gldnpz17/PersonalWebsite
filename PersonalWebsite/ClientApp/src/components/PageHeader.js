@@ -5,6 +5,8 @@ import styled from "styled-components";
 const StyledJumbotron = styled(Jumbotron)`
   background-color: ${props => props.theme.primaryLight};
   color: ${props => props.theme.textOnPrimary};
+
+  box-shadow: 0px 0.1rem 1rem ${props => props.theme.primaryLight};
 `;
 
 const StyledHeaderContentRow = styled(Row)`

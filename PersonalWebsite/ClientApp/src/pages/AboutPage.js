@@ -57,7 +57,7 @@ const StyledTimelineDiv = styled.div`
   position: relative;
   padding-top: 2rem;
   padding-bottom: 2rem;
- 
+
   &::after {
     content: "";
     position: absolute;
@@ -67,6 +67,12 @@ const StyledTimelineDiv = styled.div`
     width: 0.1rem;
     transform: translateX(-0.05rem);
     background: linear-gradient(to bottom , transparent, ${props => props.theme.secondary} 4rem, ${props => props.theme.secondary} calc(100% - 4rem), transparent);
+  }
+
+  @media (max-width: 991.98px) {
+    &::after {
+      left: 1rem;
+    }
   }
 `;
 
@@ -114,6 +120,29 @@ const StyledTimelineContainer = styled.div`
   &.right {
     left: 50%;
     padding-left: 2rem;
+  }
+
+  @media (max-width: 991.98px) {
+    width: 100%;
+    padding-left: 2rem;
+
+    &.left {
+      left: 0px;
+      padding-right: 0rem;
+    }
+
+    &.right {
+      left: 0px;
+      padding-right: 0rem;
+    }
+
+    &.left::after {
+      left: calc(1rem - 0.6rem);
+    }
+    
+    &.right::after {
+      left: calc(1rem - 0.6rem);
+    }
   }
 `;
 
