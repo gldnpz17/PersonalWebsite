@@ -158,11 +158,31 @@ export default function AboutPage() {
   return (
     <StyledContainer fluid className="m-0 p-0 pt-5 pb-5">
       <PageHeader pageTitle="About" pageSubtitle="a little bit about myself" pageDescription="some general information about myself and my contact information. you could also download an automatically generated resume(wip)." />
+      {/*Skills*/}
+      <h2 className="text-center mb-2">Skills</h2>
+      <h4 className="text-center mb-0">Programming Languages</h4>
+      <Row className="justify-content-center mb-4">
+        <SkillCard skillName="C-Sharp" src={csharpLogo} />
+        <SkillCard skillName="Javascript" src={javascriptLogo} />
+      </Row>
+      <h4 className="text-center mb-0">Technologies</h4>
+      <Row className="justify-content-center mb-5">
+        <SkillCard skillName="React.js" src={reactLogo} />
+        <SkillCard skillName="ASP.NET Core" src={aspnetcoreLogo} />
+        <SkillCard skillName="Express.js" src={expressLogo} />
+        <SkillCard skillName="GraphQL" src={graphqlLogo} />
+        <SkillCard skillName="PostgreSQL" src={postgresLogo} />
+        <SkillCard skillName="MongoDB" src={mongodbLogo} />
+        <SkillCard skillName="Redis" src={redisLogo} />
+        <SkillCard skillName="Apache" src={apacheLogo} />
+        <SkillCard skillName="Docker" src={dockerLogo} />
+      </Row>
+      
+      {/*Education*/}
       <Row className="justify-content-center w-100 m-0">
         <Col className="col-10">
-          {/*Education*/}
           <h2 className="text-center">Education</h2>
-          <StyledTimelineDiv className="mb-5">
+          <StyledTimelineDiv className="mb-5 w-lg-75">
             {
               educations.map((education, index) => {
                 return (               
@@ -178,26 +198,6 @@ export default function AboutPage() {
               })
             }
           </StyledTimelineDiv>
-
-          {/*New Skills*/}
-          <h2 className="text-center mb-2">Skills</h2>
-          <h4 className="text-center mb-0">Programming Languages</h4>
-          <Row className="justify-content-center mb-4">
-            <SkillCard skillName="C-Sharp" src={csharpLogo} />
-            <SkillCard skillName="Javascript" src={javascriptLogo} />
-          </Row>
-          <h4 className="text-center mb-0">Technologies</h4>
-          <Row className="justify-content-center mb-5">
-            <SkillCard skillName="React.js" src={reactLogo} />
-            <SkillCard skillName="ASP.NET Core" src={aspnetcoreLogo} />
-            <SkillCard skillName="Express.js" src={expressLogo} />
-            <SkillCard skillName="GraphQL" src={graphqlLogo} />
-            <SkillCard skillName="PostgreSQL" src={postgresLogo} />
-            <SkillCard skillName="MongoDB" src={mongodbLogo} />
-            <SkillCard skillName="Redis" src={redisLogo} />
-            <SkillCard skillName="Apache" src={apacheLogo} />
-            <SkillCard skillName="Docker" src={dockerLogo} />
-          </Row>
 
           {/*Achievements and Experiences*/}
           <h2 className="text-center">Achievements and Experiences</h2>

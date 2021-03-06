@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import AdminNavigationBar from './components/AdminNavigationBar';
 import HomePage from './pages/HomePage';
@@ -14,6 +14,8 @@ import AdminProfilePage from './pages/AdminProfilePage';
 import AdminWelcomePage from './pages/AdminWelcomePage';
 import AuthContext from './contexts/AuthContext';
 import { useEffect, useState } from 'react';
+import LandingPage from './pages/LandingPage';
+import UnderConstructionPage from './pages/UnderConstructionPage';
 
 const theme = {
   primary: "#455a64",
@@ -25,7 +27,7 @@ const theme = {
   secondaryDark: "#004ba0",
   secondaryLight: "#63a4ff",
   textOnSecondary: "white"
-}
+};
 
 function App() {
   const [authInfo, setAuthInfo] = useState(
@@ -72,18 +74,40 @@ function App() {
                   <AdminWelcomePage />
                 </Route>
 
-                <Route path="/">
-                  <NavigationBar />
-                  <HomePage />
+                <Route exact path="/">
+                  <UnderConstructionPage />
                 </Route>
 
-                {/*404*/}
-                <Route path="*">
-                  <h1 className="text-center">404!</h1>
+                <Route path="/">
+                  <NavigationBar />
+                  
+                  <Switch>
+                    <Route exact path="/landing">
+                      <LandingPage />
+                    </Route>
+
+                    <Route path="/blog">
+                      <BlogPage />
+                    </Route>
+
+                    <Route path="/projects">
+                      <ProjectsPage />
+                    </Route>
+
+                    <Route path="/about">
+                      <AboutPage />
+                    </Route>
+
+                    {/*404*/}
+                    <Route path="*">
+                      <h1 style={{position: 'absolute', top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>404!</h1>
+                    </Route>
+                  </Switch>
+
+                  <Footer />
                 </Route>
               </Switch>
             </Container>
-            <Footer />
           </Container>
         </AuthContext.Provider>
       </BrowserRouter>

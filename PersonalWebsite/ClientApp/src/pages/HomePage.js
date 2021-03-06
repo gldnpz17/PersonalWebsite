@@ -11,6 +11,7 @@ import ProjectsPage from "./ProjectsPage";
 import BlogPage from "./BlogPage";
 import AboutPage from "./AboutPage";
 import ShadowCard from "../components/shadow-card";
+import SiteContentCard from "../components/SiteContentCard";
 
 const StyledNavItem = styled(Nav.Item)`
   & > .nav-link {

@@ -28,10 +28,10 @@ class EducationCard extends React.Component{
   render() {
     return(
       <ShadowCard>
-        <Card.Body>
+        <Card.Body className="p-3">
           <h5 className="m-0">{this.state.cardtitle}</h5>
           <h6>{this.state.cardSubtitle}</h6>
-          <p>{this.state.cardDescription}</p>
+          <p className="m-0">{this.state.cardDescription}</p>
         </Card.Body>
       </ShadowCard>
     )

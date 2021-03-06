@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledThemedSvg = styled.svg`
-  fill: ${props => props.theme.secondaryDark};
+  fill: ${props => props.theme.secondaryLight};
 `;
 
 export default function ThemedSvg(props) {
