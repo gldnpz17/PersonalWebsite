@@ -7,23 +7,23 @@ import ThemedSvg from "./ThemedComponents/ThemedSvg";
 const StyledShadowCard = styled(ShadowCard)`
   transition-duration: 0.5s !important;
 
-  background-color: ${props => props.theme.primaryDark};
+  background: ${props => props.theme.primaryDark};
 
   h4, h6, p {
     color: whitesmoke;
   }
 
-  animation-name: entrance-anim;
+  /*animation-name: entrance-anim;
   animation-duration: 0.5s;
   animation-delay: ${(props => props.entranceDelay) ?? "0s"};
   animation-fill-mode: forwards;
-  opacity: 0%;
+  opacity: 0%;*/
 
   :hover {
     transform: translateY(-0.25rem);
   }
 
-  @keyframes entrance-anim {
+  /*@keyframes entrance-anim {
     from {
       transform: translateY(2rem);
       opacity: 0%;
@@ -31,14 +31,15 @@ const StyledShadowCard = styled(ShadowCard)`
     to {
       opacity: 100%;
     }
-  }
+  }*/
 `;
 
 const StyledBackgroundImage = styled.div`
-  background-image: url(${props => props.backgroundImage});
+  background: url(${props => props.backgroundImage});
   filter: blur(2px) brightness(${props => props.imageBrightness});
+  background-size: cover;
 
-  z-index: -1;
+  z-index: 0;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -50,7 +51,7 @@ const SiteContentCard = (props) => {
   return (
     <StyledShadowCard className="h-100" onPrimary entranceDelay={props.entranceDelay}>
       <StyledBackgroundImage backgroundImage={props.backgroundImage} imageBrightness={props.imageBrightness} />
-      <Card.Body>
+      <Card.Body style={{zIndex: 0}}>
         <div className="d-flex mb-1">
           <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
             {props.svgPath}
