@@ -17,7 +17,7 @@ jobs:
         ref: 'production'
     
     - name: Build the Docker image
-      run: docker build -f "./PersonalWebsite/Dockerfile" --tag "gldnpz.com:latest" .
+      run: docker build -f "./PersonalWebsite/Dockerfile" --tag "gldnpz/gldnpz.com:latest" .
     
     - name: Login to Docker Hub
       env: 
