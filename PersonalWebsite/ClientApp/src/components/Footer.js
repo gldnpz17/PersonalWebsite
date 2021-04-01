@@ -51,7 +51,7 @@ export default class Footer extends React.Component {
           </span>
         </Col>
         <Col className="col-auto p-0">
-          <p className="text-right m-0">©Firdaus Bisma S</p>
+          <p className="text-right m-0">Firdaus Bisma S</p>
         </Col>
       </StyledFooterRow>
     );

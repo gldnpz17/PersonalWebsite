@@ -9,6 +9,7 @@ import ThemedButton from "../components/ThemedComponents/ThemedButton";
 import ThemedCard from "../components/ThemedComponents/ThemedCard";
 import DateTimeFormatter from "../helpers/DateTimeFormatter";
 import ViewPostPage from "./ViewPostPage";
+import ShadowCard from "../components/shadow-card";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;
@@ -52,7 +53,7 @@ export default function BlogPage(props) {
                 {posts?.map(post => {
                   return(
                     <Col className="pb-3">
-                      <ThemedCard>
+                      <ShadowCard>
                         <Card.Body>
                           <h5 className="m-0">{post?.title}</h5>
                           <h6 style={{color: "darkslategray"}}>{DateTimeFormatter.parseToDate(post?.publishDate)}</h6>
@@ -76,7 +77,7 @@ export default function BlogPage(props) {
                             </span>
                           </div>
                         </Card.Body>
-                      </ThemedCard>
+                      </ShadowCard>
                     </Col>
                   );
                 })}

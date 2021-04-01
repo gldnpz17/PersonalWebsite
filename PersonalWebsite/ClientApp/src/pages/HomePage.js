@@ -10,6 +10,8 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import ProjectsPage from "./ProjectsPage";
 import BlogPage from "./BlogPage";
 import AboutPage from "./AboutPage";
+import ShadowCard from "../components/shadow-card";
+import SiteContentCard from "../components/SiteContentCard";
 
 const StyledNavItem = styled(Nav.Item)`
   & > .nav-link {
@@ -118,8 +120,8 @@ export default function HomePage(props) {
             <Col>
               <h2 className="text-center">Site Contents</h2>
               <Row className="row-cols-1 row-cols-lg-3 mb-5">
-                <Col className="p-1">
-                  <ThemedCard className="h-100">
+                <Col className="p-2">
+                  <ShadowCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -131,10 +133,10 @@ export default function HomePage(props) {
                       <h6>random thoughts</h6>
                       <p className="text-justify">not really a blog to be honest. the plan is to make it sort of like a place to vent out my thoughts in general. might diverge from a blog in the traditional sense in the future 🤷‍♂️. might even post memes here.</p>
                     </Card.Body>
-                  </ThemedCard>
+                  </ShadowCard>
                 </Col>
-                <Col className="p-1">
-                  <ThemedCard className="h-100">
+                <Col className="p-2">
+                  <ShadowCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -146,10 +148,10 @@ export default function HomePage(props) {
                       <h6>projects i've worked on</h6>
                       <p className="text-justify">a complete list of projects i've worked on. this is also where i keep the documentation for my projects(wip). you could also download an automatically generated portfolio(wip).</p>
                     </Card.Body>
-                  </ThemedCard>
+                  </ShadowCard>
                 </Col>
-                <Col className="p-1">
-                  <ThemedCard className="h-100">
+                <Col className="p-2">
+                  <ShadowCard className="h-100">
                     <Card.Body>
                       <div className="d-flex mb-1">
                         <ThemedSvg style={{width: "2rem", height: "2rem"}} viewBox="0 0 24 24" className="mr-2">
@@ -161,7 +163,7 @@ export default function HomePage(props) {
                       <h6>a little bit about myself</h6>
                       <p className="text-justify">some general information about myself and my contact information. you could also download an automatically generated resume(wip).</p>
                     </Card.Body>
-                  </ThemedCard> 
+                  </ShadowCard> 
                 </Col>
               </Row>
 

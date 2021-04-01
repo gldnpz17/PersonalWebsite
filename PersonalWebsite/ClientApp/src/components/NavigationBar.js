@@ -37,6 +37,8 @@ const StyledButton = styled(Button)`
 
 const StyledNavBar = styled(Navbar)`
   background-color: #1c313a;
+
+  box-shadow: 0rem 0.05rem 0.5rem ${props => props.theme.primaryDark};
 `;
 
 const StyledNavbarBrand = styled(Navbar.Brand)`
@@ -93,7 +95,7 @@ export default function NavigationBar(props) {
   return (
     <StyledNavBar expand="md" className="fixed-top w-100">
       <Navbar.Toggle className="navbar-dark" />
-      <StyledNavbarBrand href="/">gldnpz</StyledNavbarBrand>
+      <StyledNavbarBrand href="/landing">gldnpz</StyledNavbarBrand>
 
       <Navbar.Collapse>
         <Nav>
