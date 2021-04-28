@@ -4,10 +4,6 @@
   animation-play-state: paused !important;
 }
 
-* {
-  //border: 1px solid red !important;
-}
-
 body {
   margin: 0;
   font-family: Roboto, sans-serif !important;
