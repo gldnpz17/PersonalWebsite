@@ -14,6 +14,8 @@ WORKDIR /src
 COPY . .
 WORKDIR /src/PersonalWebsite
 RUN dotnet build "PersonalWebsite.csproj" -c Release -o /app/build
+WORKDIR /src/PersonalWebsite/ClientApp
+RUN npm list --depth 0
 
 FROM build AS publish
 RUN dotnet publish "PersonalWebsite.csproj" -c Release -o /app/publish
