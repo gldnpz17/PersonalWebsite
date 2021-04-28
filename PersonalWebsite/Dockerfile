@@ -17,8 +17,7 @@ RUN dotnet build "PersonalWebsite.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "PersonalWebsite.csproj" -c Release -o /app/publish
-WORKDIR /src/PersonalWebsite/ClientApp
-RUN npm list --depth=0
+RUN ls /src/PersonalWebsite/ClientApp
 
 FROM base AS final
 WORKDIR /app
