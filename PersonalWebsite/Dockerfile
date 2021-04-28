@@ -14,7 +14,6 @@ WORKDIR /src
 COPY . .
 WORKDIR /src/PersonalWebsite
 RUN dotnet build "PersonalWebsite.csproj" -c Release -o /app/build
-RUN npm rebuild --force
 
 FROM build AS publish
 RUN dotnet publish "PersonalWebsite.csproj" -c Release -o /app/publish
