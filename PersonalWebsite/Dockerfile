@@ -11,15 +11,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 RUN curl -sL https://deb.nodesource.com/setup_12.x |  bash -
 RUN apt-get install -y nodejs
 WORKDIR /src
-COPY ["PersonalWebsite/PersonalWebsite.csproj", "PersonalWebsite/"]
-COPY ["UseCases/Application/Application.csproj", "UseCases/Application/"]
-COPY ["Infrastructure/Persistence/InMemoryEFCore/InMemoryEFCore.csproj", "Infrastructure/Persistence/InMemoryEFCore/"]
-COPY ["Infrastructure/Persistence/EFCorePostgres/EFCorePostgres.csproj", "Infrastructure/Persistence/EFCorePostgres/"]
-COPY ["Entities/DomainModel/DomainModel.csproj", "Entities/DomainModel/"]
-COPY ["Infrastructure/Services/SimpleDomainServiceImplementation/SimpleDomainServiceImplementation.csproj", "Infrastructure/Services/SimpleDomainServiceImplementation/"]
-RUN dotnet restore "PersonalWebsite/PersonalWebsite.csproj"
 COPY . .
-WORKDIR "/src/PersonalWebsite"
+WORKDIR /src/PersonalWebsite
 RUN dotnet build "PersonalWebsite.csproj" -c Release -o /app/build
 RUN npm rebuild --force
 

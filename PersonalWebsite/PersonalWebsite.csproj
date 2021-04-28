@@ -71,10 +71,6 @@
     </ItemGroup>
   </Target>
 
-  <ItemGroup>
-    <None Remove="..\.dockerignore" />
-  </ItemGroup>
-
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
@@ -90,5 +86,9 @@
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="..\.dockerignore" />
+  </ItemGroup>
 
 </Project>
