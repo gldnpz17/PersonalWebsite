@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import AdminNavigationBar from './components/AdminNavigationBar';
