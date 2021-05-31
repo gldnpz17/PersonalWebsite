@@ -28,7 +28,7 @@ const theme = {
   whitespace: 'whitesmoke'
 };
 
-function App() {
+function Application() {
   const [authInfo, setAuthInfo] = useState(
     {
       isLoggedIn: false,
@@ -114,4 +114,4 @@ function App() {
   );
 }
 
-export default App;
+export default Application;
