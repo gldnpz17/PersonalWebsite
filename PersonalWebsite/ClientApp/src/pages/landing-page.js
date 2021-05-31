@@ -1,9 +1,9 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import ShadowCard from "../components/shadow-card";
-import SiteContentCard from "../components/SiteContentCard";
-import ThemedButton from "../components/ThemedComponents/ThemedButton";
-import ThemedSvg from "../components/ThemedComponents/ThemedSvg";
+import SiteContentCard from "../components/site-content-card";
+import ThemedButton from "../components/themed-components/themed-button";
+import ThemedSvg from "../components/themed-components/themed-svg";
 
 const StyledContainer = styled(Container)`
   background-color: ${props => props.theme.primary};

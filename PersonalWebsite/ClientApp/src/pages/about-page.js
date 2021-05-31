@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { Card, CardColumns, CardDeck, Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import styled from "styled-components";
-import EducationCard from "../components/EducationCard";
-import PageHeader from "../components/PageHeader";
-import SkillTabContent from "../components/SkillTabContent";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
-import PrimaryThemedFlatCard from "../components/ThemedComponents/PrimaryThemedFlatCard";
+import EducationCard from "../components/education-card";
+import PageHeader from "../components/page-header";
 import SkillCard from "../components/skill-card";
 
 import csharpLogo from "../images/csharp_logo.png";

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import WritePostModal from "../components/modals/WritePostModal";
-import PrimaryThemedFlatCard from "../components/ThemedComponents/PrimaryThemedFlatCard";
-import ThemedButton from "../components/ThemedComponents/ThemedButton";
-import ThemedSecondaryButton from "../components/ThemedComponents/ThemedSecondaryButton";
+import WritePostModal from "../components/modals/write-post-modal";
+import PrimaryThemedFlatCard from "../components/themed-components/primary-themed-flat-card";
+import ThemedButton from "../components/themed-components/themed-button";
+import ThemedSecondaryButton from "../components/themed-components/themed-secondary-button";
 
 export default function AdminBlogPage(props) {
   const [posts, setPosts] = useState(null);

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
+import ThemedCard from "../components/themed-components/themed-card";
 import DOMPurify from "dompurify";
 import marked, { parse } from "marked";
-import TagButton from "../components/TagButton";
+import TagButton from "../components/tag-button";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;

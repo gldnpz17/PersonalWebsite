@@ -13,9 +13,7 @@ const StyledCard = styled(Card)`
 
 const ShadowCard = (props) => {
   return (
-    <StyledCard className={props.className} style={props.style} onPrimary={props.onPrimary}>
-      {props.children}
-    </StyledCard>
+    <StyledCard {...props} />
   );
 };
 

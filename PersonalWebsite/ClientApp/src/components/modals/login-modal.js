@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
-import AuthContext from "../../contexts/AuthContext";
-import ThemedButton from "../ThemedComponents/ThemedButton";
-import ThemedSecondaryButton from "../ThemedComponents/ThemedSecondaryButton";
-import ThemedSvg from "../ThemedComponents/ThemedSvg";
+import AuthContext from "../../contexts/auth-context";
+import ThemedButton from "../themed-components/themed-button";
+import ThemedSecondaryButton from "../themed-components/themed-secondary-button";
+import ThemedSvg from "../themed-components/themed-svg";
 
 export default function LoginModal(props) {
   const authInfo = useContext(AuthContext);

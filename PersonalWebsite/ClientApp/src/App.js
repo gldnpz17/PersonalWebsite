@@ -1,20 +1,18 @@
 import logo from './logo.svg';
 import { BrowserRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import AdminNavigationBar from './components/AdminNavigationBar';
-import HomePage from './pages/HomePage';
-import Footer from './components/Footer';
-import ProjectsPage from './pages/ProjectsPage';
+import NavigationBar from './components/navigation-bar';
+import AdminNavigationBar from './components/admin-navigation-bar';
+import Footer from './components/footer';
+import ProjectsPage from './pages/projects-page';
 import { ThemeProvider } from 'styled-components';
-import BlogPage from './pages/BlogPage';
+import BlogPage from './pages/blog-page';
 import { Container } from 'react-bootstrap';
-import AboutPage from './pages/AboutPage';
-import AdminProfilePage from './pages/AdminProfilePage';
-import AdminWelcomePage from './pages/AdminWelcomePage';
-import AuthContext from './contexts/AuthContext';
+import AboutPage from './pages/about-page';
+import AdminWelcomePage from './pages/admin-welcome-page';
+import AuthContext from './contexts/auth-context';
 import { useEffect, useState } from 'react';
-import LandingPage from './pages/LandingPage';
-import UnderConstructionPage from './pages/UnderConstructionPage';
+import LandingPage from './pages/landing-page';
+import UnderConstructionPage from './pages/under-construction-page';
 
 const theme = {
   primary: "#455a64",
@@ -25,7 +23,9 @@ const theme = {
   secondary: "#1976d2",
   secondaryDark: "#004ba0",
   secondaryLight: "#63a4ff",
-  textOnSecondary: "white"
+  textOnSecondary: "white",
+
+  whitespace: 'whitesmoke'
 };
 
 function App() {

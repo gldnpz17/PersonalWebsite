@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import styled from "styled-components";
-import SocialButton from "./SocialButton";
+import SocialButton from "./social-button";
 
 const StyledFooterRow = styled(Row)`
   background-color: #1c313a;

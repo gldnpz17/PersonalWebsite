@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
-import PageHeader from "../components/PageHeader";
-import TagButton from "../components/TagButton";
-import ThemedButton from "../components/ThemedComponents/ThemedButton";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
-import ProjectDetailsPage from "./ProjectDetailsPage";
+import PageHeader from "../components/page-header";
+import TagButton from "../components/tag-button";
+import ThemedButton from "../components/themed-components/themed-button";
+import ThemedCard from "../components/themed-components/themed-card";
+import ProjectDetailsPage from "./project-details-page";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;

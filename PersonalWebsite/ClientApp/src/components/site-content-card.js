@@ -1,10 +1,11 @@
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
 import ShadowCard from "./shadow-card";
-import ThemedButton from "./ThemedComponents/ThemedButton";
-import ThemedSvg from "./ThemedComponents/ThemedSvg";
+import ThemedButton from "./themed-components/themed-button";
+import ThemedSvg from "./themed-components/themed-svg";
 
 const StyledShadowCard = styled(ShadowCard)`
+  transition-property: all;
   transition-duration: 0.5s !important;
 
   background: ${props => props.theme.primaryDark};
@@ -13,17 +14,17 @@ const StyledShadowCard = styled(ShadowCard)`
     color: whitesmoke;
   }
 
-  /*animation-name: entrance-anim;
+  animation-name: entrance-anim;
   animation-duration: 0.5s;
   animation-delay: ${(props => props.entranceDelay) ?? "0s"};
-  animation-fill-mode: forwards;
-  opacity: 0%;*/
+  animation-iteration-count: 1;
+  opacity: 100%;
 
   :hover {
     transform: translateY(-0.25rem);
   }
 
-  /*@keyframes entrance-anim {
+  @keyframes entrance-anim {
     from {
       transform: translateY(2rem);
       opacity: 0%;
@@ -31,7 +32,7 @@ const StyledShadowCard = styled(ShadowCard)`
     to {
       opacity: 100%;
     }
-  }*/
+  }
 `;
 
 const StyledBackgroundImage = styled.div`

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Button, Collapse, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
-import AuthContext from "../contexts/AuthContext";
-import LoginModal from "./modals/LoginModal";
-import ThemedButton from "./ThemedComponents/ThemedButton";
-import ThemedSecondaryButton from "./ThemedComponents/ThemedSecondaryButton";
+import AuthContext from "../contexts/auth-context";
+import LoginModal from "./modals/login-modal";
+import ThemedButton from "./themed-components/themed-button";
+import ThemedSecondaryButton from "./themed-components/themed-secondary-button";
 
 const StyledButton = styled(Button)`
   background-color: ${props => props.theme.secondary};

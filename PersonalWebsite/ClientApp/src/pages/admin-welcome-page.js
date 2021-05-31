@@ -1,12 +1,12 @@
 import { Card, Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom"
 import styled from "styled-components";
-import PrimaryThemedFlatCard from "../components/ThemedComponents/PrimaryThemedFlatCard";
-import PrimaryThemedNavItem from "../components/ThemedComponents/PrimaryThemedNavItem";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
-import AdminBlogPage from "./AdminBlogPage";
-import AdminProfilePage from "./AdminProfilePage";
-import AdminProjectsPage from "./AdminProjectsPage";
+import PrimaryThemedFlatCard from "../components/themed-components/primary-themed-flat-card";
+import PrimaryThemedNavItem from "../components/themed-components/primary-themed-nav-item";
+import ThemedCard from "../components/themed-components/themed-card";
+import AdminBlogPage from "./admin-blog-page";
+import AdminProfilePage from "./admin-profile-page";
+import AdminProjectsPage from "./admin-projects-page";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;

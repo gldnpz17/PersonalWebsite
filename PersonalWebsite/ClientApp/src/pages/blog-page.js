@@ -3,12 +3,11 @@ import { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
-import PageHeader from "../components/PageHeader";
-import TagButton from "../components/TagButton";
-import ThemedButton from "../components/ThemedComponents/ThemedButton";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
-import DateTimeFormatter from "../helpers/DateTimeFormatter";
-import ViewPostPage from "./ViewPostPage";
+import PageHeader from "../components/page-header";
+import TagButton from "../components/tag-button";
+import ThemedButton from "../components/themed-components/themed-button";
+import DateTimeFormatter from "../helpers/date-time-formatter";
+import ViewPostPage from "./view-post-page";
 import ShadowCard from "../components/shadow-card";
 
 const StyledContainer = styled(Container)`

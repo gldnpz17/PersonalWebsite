@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import TagButton from "../components/TagButton";
-import ThemedCard from "../components/ThemedComponents/ThemedCard";
+import TagButton from "../components/tag-button";
+import ThemedCard from "../components/themed-components/themed-card";
 import DOMPurify from "dompurify";
 import marked from "marked";
-import DateTimeFormatter from "../helpers/DateTimeFormatter";
+import DateTimeFormatter from "../helpers/date-time-formatter";
 
 const StyledContainer = styled(Container)`
   background-color: whitesmoke;

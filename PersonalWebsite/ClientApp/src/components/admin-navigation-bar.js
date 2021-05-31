@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Collapse, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
-import LoginModal from "./modals/LoginModal";
-import ThemedButton from "./ThemedComponents/ThemedButton";
+import LoginModal from "./modals/login-modal";
+import ThemedButton from "./themed-components/themed-button";
 
 const StyledNavBar = styled(Navbar)`
   background-color: #1c313a;

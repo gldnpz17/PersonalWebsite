@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import AddProjectModal from "../components/modals/AddProjectModal";
-import PrimaryThemedFlatCard from "../components/ThemedComponents/PrimaryThemedFlatCard";
-import ThemedButton from "../components/ThemedComponents/ThemedButton";
-import ThemedSecondaryButton from "../components/ThemedComponents/ThemedSecondaryButton";
+import AddProjectModal from "../components/modals/add-project-modal";
+import PrimaryThemedFlatCard from "../components/themed-components/primary-themed-flat-card";
+import ThemedButton from "../components/themed-components/themed-button";
+import ThemedSecondaryButton from "../components/themed-components/themed-secondary-button";
 
 export default function AdminProjectsPage(props) {
   const [projects, setProjects] = useState(null);

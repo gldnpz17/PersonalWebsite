@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import ThemedButton from "./ThemedComponents/ThemedButton";
+import ThemedButton from "./themed-components/themed-button";
 
 export default function TagButton(props) {
   return (

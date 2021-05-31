@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
-import ThemedButton from "../ThemedComponents/ThemedButton";
-import ThemedSecondaryButton from "../ThemedComponents/ThemedSecondaryButton";
-import ThemedSvg from "../ThemedComponents/ThemedSvg";
+import ThemedButton from "../themed-components/themed-button";
+import ThemedSecondaryButton from "../themed-components/themed-secondary-button";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import DOMPurify from "dompurify";
