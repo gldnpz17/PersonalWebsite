@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import { BrowserRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
 import NavigationBar from './components/navigation-bar';
 import AdminNavigationBar from './components/admin-navigation-bar';
-import Footer from './components/footer';
+import PageFooter from './components/page-footer';
 import ProjectsPage from './pages/projects-page';
 import { ThemeProvider } from 'styled-components';
 import BlogPage from './pages/blog-page';
@@ -103,7 +102,7 @@ function Application() {
                     </Route>
                   </Switch>
 
-                  <Footer />
+                  <PageFooter />
                 </Route>
               </Switch>
             </Container>

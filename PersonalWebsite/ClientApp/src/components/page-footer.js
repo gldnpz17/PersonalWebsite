@@ -8,7 +8,7 @@ const StyledFooterRow = styled(Row)`
   color: white;
 `;
 
-export default class Footer extends React.Component {
+export default class PageFooter extends React.Component {
   render() {
     return(
       <StyledFooterRow className="p-3 w-100 m-0 align-self-end">
